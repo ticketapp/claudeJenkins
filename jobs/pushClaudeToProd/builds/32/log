@@ -1,0 +1,22 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/claude_dev/workspace
+[workspace] $ /bin/sh -xe /tmp/hudson3486833685814892148.sh
++ chmod +x ./sbt-launch.jar
++ java -jar ./sbt-launch.jar
+[0m[[0minfo[0m] [0mSet current project to workspace (in build file:/var/jenkins_home/jobs/claude_dev/workspace/)[0m
+> FATAL: command execution failed: sbt-launch.jar not found
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjava.lang.IllegalArgumentException: sbt-launch.jar not found
+	at org.jvnet.hudson.plugins.SbtPluginBuilder.buildCmdLine(SbtPluginBuilder.java:171)
+	at org.jvnet.hudson.plugins.SbtPluginBuilder.perform(SbtPluginBuilder.java:118)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:776)
+	at hudson.model.Build$BuildExecution.build(Build.java:203)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:160)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:536)
+	at hudson.model.Run.execute(Run.java:1738)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:381)
+Build step 'Build using sbt' changed build result to FAILURE
+Build step 'Build using sbt' marked build as failure
+Finished: FAILURE

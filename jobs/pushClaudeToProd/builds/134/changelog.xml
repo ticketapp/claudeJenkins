@@ -1,0 +1,13 @@
+commit e299a7b1e0135abd334b43b030177da62f424201
+tree 5f3b7b7c6e43023d469f5abf64f8ff6fb6ffd139
+parent 220a8d423161edb6169ecdf39ca1fc54e764eab5
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 20:00:24 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 20:00:24 +0100
+
+    Test database config
+
+
+
+:100755 100755 d1ca178376688a2532a190f0f6a144c7c372f780 023b257ce9e94d7039111da66e4e57e7ed69b0ce M	conf/application.conf
+:100644 100644 f5f3c9324950915a5ee79fd0856afe15e13c9864 5d9b9dfe827c59624dd9de6ca05d1fd3b2d01fff M	test/testsHelper/Context.scala
+:100644 100644 88c2f985068772a808b135a8db880107c8e5b1dd c09758dfedbe4fe178be7388bf5c38f83bd4a5ae M	test/testsHelper/Injectors.scala

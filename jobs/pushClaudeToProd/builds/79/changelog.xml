@@ -1,0 +1,11 @@
+commit 2655c260d6a36ebbfa231dc6e476b14242140b47
+tree e7cf55e9efadfc4153a3697b77261ea9491f0dc5
+parent 21c762be5fab1f1ad7d57a7e284cfd27e1eb013f
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-01 22:11:01 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-01 22:11:01 +0100
+
+    WIP 6
+
+
+
+:100755 100755 43055926081786db2b06046934c23eebb10b339e 95079ed9cb34a993512b108d438a8bbc40f86759 M	conf/application.conf

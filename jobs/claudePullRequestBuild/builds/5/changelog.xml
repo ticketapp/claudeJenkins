@@ -1,0 +1,11 @@
+commit 6571fd058d3bf8b91623796aeefb9702f3908a69
+tree 6d0a471e15be5348fd27c90e349df29d47dad308
+parent 5b1813739720fd45f2aa2004efeef30e49b88e68
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:45:31 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:45:31 +0100
+
+    Same dbconf
+
+
+
+:100644 100644 32d5605d1a396e393b5683186f8f92b44ec6cd57 75c3bd8127e7b85eca0c7395af5ba9b183ed2d3c M	test/testsHelper/Injectors.scala

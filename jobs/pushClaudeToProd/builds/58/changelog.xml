@@ -1,0 +1,12 @@
+commit 21c762be5fab1f1ad7d57a7e284cfd27e1eb013f
+tree 20e9463a0f41df52c4236097b0d7f08016fbca08
+parent 32216304959d5583a66371777e87f4b72e12eee6
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-11-30 19:15:16 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-11-30 19:15:16 +0100
+
+    WIP TESTS JENKINS 4
+
+
+
+:100755 100755 adf49bebae03b75fb53a82e84f558e8bcc449931 43055926081786db2b06046934c23eebb10b339e M	conf/application.conf
+:100644 100644 981045b3fe874ccd9c080097a360f2decf5e8d15 88c2f985068772a808b135a8db880107c8e5b1dd M	test/testsHelper/Injectors.scala

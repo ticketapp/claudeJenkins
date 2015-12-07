@@ -1,0 +1,48 @@
+commit 28e83990d1bc5ac12bf7b1419c1aef0180fbe20d
+tree 4d6ef80014e99b5386ac65cd0f8d1683cc4dc056
+parent 6571fd058d3bf8b91623796aeefb9702f3908a69
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 02:07:33 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 02:07:33 +0100
+
+    Comment some tests un utilities about bit.ly in order to avoid random
+    test errors
+
+
+
+:100755 100755 22c405d264cbbf7bd226034bd4b568ccf9f69e7d 81498e467a06e8abc74b554ca310caaa0e68c103 M	test/TestUtilities.scala
+commit 6571fd058d3bf8b91623796aeefb9702f3908a69
+tree 6d0a471e15be5348fd27c90e349df29d47dad308
+parent 5b1813739720fd45f2aa2004efeef30e49b88e68
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:45:31 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:45:31 +0100
+
+    Same dbconf
+
+
+
+:100644 100644 32d5605d1a396e393b5683186f8f92b44ec6cd57 75c3bd8127e7b85eca0c7395af5ba9b183ed2d3c M	test/testsHelper/Injectors.scala
+commit 5b1813739720fd45f2aa2004efeef30e49b88e68
+tree 2ee4058684abf57f87a8e320dcf748101063736e
+parent 4265dc8676b2f89fa6692ef7d294b3fd0b26b11a
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:42:59 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:42:59 +0100
+
+    Change database configuration to run tests from jenkins docker image
+
+
+
+:100755 100755 b0d5cfbd4a32a63643e99c695751d92d9af4aec4 7a4cef61b7ccc7418134800fbd2e17019459b131 M	conf/application.conf
+:100755 100755 354c2215001e26290b785029bd365fb20318d15b 93fe1d0d75d4a1b29ec23111a09f82ce46218d22 M	test/TestSearchTracksController.scala
+:100644 100644 75c3bd8127e7b85eca0c7395af5ba9b183ed2d3c 32d5605d1a396e393b5683186f8f92b44ec6cd57 M	test/testsHelper/Injectors.scala
+commit 4265dc8676b2f89fa6692ef7d294b3fd0b26b11a
+tree de8f70cd388b3bfea0cd8eb0d3ef8f3ed46412c3
+parent 7eb65c67b210e637a7325c2ed1a16714c8c51b79
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:36:11 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:36:11 +0100
+
+    Correct tests to make them pass
+
+
+
+:100644 100644 78b8d1ac5003c6b3f34cd1d0161f0a15fd425969 9f60f60c00f6cd445ee17fdf8dc955b9f57c0694 M	test/TestArtistController.scala
+:100755 100755 d36ad13d8e215dccac896cd9f5498a987b0d61be 354c2215001e26290b785029bd365fb20318d15b M	test/TestSearchTracksController.scala

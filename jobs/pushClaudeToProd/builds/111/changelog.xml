@@ -1,0 +1,11 @@
+commit 78e9bc122c6e9309a719f20bf231962253648934
+tree 5e261e78a41e742abcb3178017887eadcd208e75
+parent c0588a0d18d6f1f6a70cd8547a7926b25dfcf115
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 04:31:23 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 04:31:23 +0100
+
+    Update postgresql JDBC plugin
+
+
+
+:100644 100644 43745cebfc026cea2c041593df1246bdc2b8d359 d18b5ea95306f24ecc48670ea3750a478bc597c0 M	build.sbt

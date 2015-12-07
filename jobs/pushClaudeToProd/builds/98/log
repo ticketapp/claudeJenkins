@@ -1,0 +1,29 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/claude_dev/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ticketapp/master.git # timeout=10
+Fetching upstream changes from https://github.com/ticketapp/master.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username ticketapp # timeout=10
+ > git config --local credential.helper store --file=/tmp/git1303379790299261459.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ticketapp/master.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision 8db02bbda97087653f56988f0870c873ad71961a (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8db02bbda97087653f56988f0870c873ad71961a
+ > git rev-list 8db02bbda97087653f56988f0870c873ad71961a # timeout=10
+SSH: Connecting from host [c00c4dc65c58]
+SSH: Connecting with configuration [claudeRemote] ...
+SSH: EXEC: STDOUT/STDERR from command [scp ./target/universal/tmp/bin/claude root@51.254.122.113:
+] ...
+Permission denied, please try again.
+Permission denied, please try again.
+Permission denied (publickey,password).
+lost connection
+SSH: EXEC: completed after 201 ms
+SSH: Disconnecting configuration [claudeRemote] ...
+ERROR: Exception when publishing, exception message [Exec exit status not zero. Status [1]]
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: UNSTABLE

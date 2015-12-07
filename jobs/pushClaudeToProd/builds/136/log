@@ -1,0 +1,1259 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/claude_dev/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ticketapp/master.git # timeout=10
+Fetching upstream changes from https://github.com/ticketapp/master.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username ticketapp # timeout=10
+ > git config --local credential.helper store --file=/tmp/git1728001075876223951.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ticketapp/master.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision 8086d5a38de31a4d24f4ff341064fbdb479a0f4d (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8086d5a38de31a4d24f4ff341064fbdb479a0f4d
+ > git rev-list e299a7b1e0135abd334b43b030177da62f424201 # timeout=10
+[INFO] HipChat notification sent to the following rooms: 1512094
+[workspace] $ java -Dsbt.log.noformat=true -jar /var/jenkins_home/tools/org.jvnet.hudson.plugins.SbtPluginBuilder_SbtInstallation/sbt/bin/sbt-launch.jar dist
+[info] Loading project definition from /var/jenkins_home/jobs/claude_dev/workspace/project
+[info] Set current project to Claude (in build file:/var/jenkins_home/jobs/claude_dev/workspace/)
+[info] Packaging /var/jenkins_home/jobs/claude_dev/workspace/target/scala-2.11/claude_2.11-0.001-sources.jar ...
+[info] Done packaging.
+[info] Wrote /var/jenkins_home/jobs/claude_dev/workspace/target/scala-2.11/claude_2.11-0.001.pom
+[info] Packaging /var/jenkins_home/jobs/claude_dev/workspace/target/scala-2.11/claude_2.11-0.001.jar ...
+[info] Done packaging.
+[info] 
+[info] Your package is ready in /var/jenkins_home/jobs/claude_dev/workspace/target/universal/claude-0.001.zip
+[info] 
+[success] Total time: 4 s, completed Dec 2, 2015 7:23:46 PM
+Build step 'Build using sbt' changed build result to SUCCESS
+SSH: Connecting from host [c00c4dc65c58]
+SSH: Connecting with configuration [claudeRemote] ...
+SSH: EXEC: STDOUT/STDERR from command [rm claude* -R] ...
+SSH: EXEC: completed after 200 ms
+SSH: EXEC: STDOUT/STDERR from command [unzip -o claude*.zip
+/root/claude*/bin/claude] ...
+Archive:  claude-0.001.zip
+  inflating: claude-0.001/lib/claude.claude-0.001-sans-externalized.jar  
+  inflating: claude-0.001/lib/org.scala-lang.scala-library-2.11.7.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.twirl-api_2.11-1.1.1.jar  
+  inflating: claude-0.001/lib/org.apache.commons.commons-lang3-3.4.jar  
+  inflating: claude-0.001/lib/org.scala-lang.modules.scala-xml_2.11-1.0.1.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-server_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.build-link-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-exceptions-2.4.2.jar  
+  inflating: claude-0.001/lib/org.javassist.javassist-3.19.0-GA.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-iteratees_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/org.scala-stm.scala-stm_2.11-0.7.jar  
+  inflating: claude-0.001/lib/com.typesafe.config-1.3.0.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-json_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-functional_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-datacommons_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/joda-time.joda-time-2.8.1.jar  
+  inflating: claude-0.001/lib/org.joda.joda-convert-1.7.jar  
+  inflating: claude-0.001/lib/org.scala-lang.scala-reflect-2.11.6.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.core.jackson-core-2.5.4.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.core.jackson-annotations-2.5.4.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.core.jackson-databind-2.5.4.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.5.4.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.5.4.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-netty-utils-2.4.2.jar  
+  inflating: claude-0.001/lib/org.slf4j.slf4j-api-1.7.12.jar  
+  inflating: claude-0.001/lib/org.slf4j.jul-to-slf4j-1.7.12.jar  
+  inflating: claude-0.001/lib/org.slf4j.jcl-over-slf4j-1.7.12.jar  
+  inflating: claude-0.001/lib/org.scala-lang.modules.scala-parser-combinators_2.11-1.0.1.jar  
+  inflating: claude-0.001/lib/ch.qos.logback.logback-core-1.1.3.jar  
+  inflating: claude-0.001/lib/ch.qos.logback.logback-classic-1.1.3.jar  
+  inflating: claude-0.001/lib/com.typesafe.akka.akka-actor_2.11-2.3.11.jar  
+  inflating: claude-0.001/lib/com.typesafe.akka.akka-slf4j_2.11-2.3.11.jar  
+  inflating: claude-0.001/lib/commons-codec.commons-codec-1.10.jar  
+  inflating: claude-0.001/lib/xerces.xercesImpl-2.11.0.jar  
+  inflating: claude-0.001/lib/xml-apis.xml-apis-1.4.01.jar  
+  inflating: claude-0.001/lib/javax.transaction.jta-1.1.jar  
+  inflating: claude-0.001/lib/com.google.inject.guice-4.0.jar  
+  inflating: claude-0.001/lib/javax.inject.javax.inject-1.jar  
+  inflating: claude-0.001/lib/aopalliance.aopalliance-1.0.jar  
+  inflating: claude-0.001/lib/com.google.inject.extensions.guice-assistedinject-4.0.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-netty-server_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/io.netty.netty-3.10.3.Final.jar  
+  inflating: claude-0.001/lib/com.typesafe.netty.netty-http-pipelining-1.1.4.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-cache_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/net.sf.ehcache.ehcache-core-2.6.11.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-jdbc-evolutions_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-jdbc-api_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-ws_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/com.google.guava.guava-18.0.jar  
+  inflating: claude-0.001/lib/com.ning.async-http-client-1.9.21.jar  
+  inflating: claude-0.001/lib/oauth.signpost.signpost-core-1.2.1.2.jar  
+  inflating: claude-0.001/lib/oauth.signpost.signpost-commonshttp4-1.2.1.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.filters-helpers_2.11-2.4.2.jar  
+  inflating: claude-0.001/lib/net.codingwell.scala-guice_2.11-4.0.0.jar  
+  inflating: claude-0.001/lib/com.google.inject.extensions.guice-multibindings-4.0.jar  
+  inflating: claude-0.001/lib/org.webjars.webjars-play_2.11-2.4.0-1.jar  
+  inflating: claude-0.001/lib/org.webjars.requirejs-2.1.15.jar  
+  inflating: claude-0.001/lib/org.webjars.webjars-locator-0.23.jar  
+  inflating: claude-0.001/lib/org.webjars.webjars-locator-core-0.22.jar  
+  inflating: claude-0.001/lib/org.postgresql.postgresql-9.4-1205-jdbc42.jar  
+  inflating: claude-0.001/lib/com.mohiva.play-silhouette_2.11-3.0.2.jar  
+  inflating: claude-0.001/lib/org.mindrot.jbcrypt-0.3m.jar  
+  inflating: claude-0.001/lib/com.atlassian.jwt.jwt-core-1.2.4.jar  
+  inflating: claude-0.001/lib/com.nimbusds.nimbus-jose-jwt-2.16.jar  
+  inflating: claude-0.001/lib/net.jcip.jcip-annotations-1.0.jar  
+  inflating: claude-0.001/lib/net.minidev.json-smart-1.1.1.jar  
+  inflating: claude-0.001/lib/javax.mail.mail-1.4.7.jar  
+  inflating: claude-0.001/lib/javax.activation.activation-1.1.jar  
+  inflating: claude-0.001/lib/com.atlassian.jwt.jwt-api-1.2.4.jar  
+  inflating: claude-0.001/lib/com.google.code.findbugs.jsr305-2.0.1.jar  
+  inflating: claude-0.001/lib/net.ceedubs.ficus_2.11-1.1.2.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-slick_2.11-1.0.1.jar  
+  inflating: claude-0.001/lib/com.typesafe.slick.slick_2.11-3.0.1.jar  
+  inflating: claude-0.001/lib/org.reactivestreams.reactive-streams-1.0.0.jar  
+  inflating: claude-0.001/lib/com.zaxxer.HikariCP-java6-2.3.7.jar  
+  inflating: claude-0.001/lib/com.typesafe.play.play-slick-evolutions_2.11-1.0.1.jar  
+  inflating: claude-0.001/lib/com.github.tototoshi.slick-joda-mapper_2.11-2.0.0.jar  
+  inflating: claude-0.001/lib/com.github.tminglei.slick-pg_2.11-0.9.1.jar  
+  inflating: claude-0.001/lib/com.github.tminglei.slick-pg_core_2.11-0.9.1.jar  
+  inflating: claude-0.001/lib/com.vividsolutions.jts-1.13.jar  
+  inflating: claude-0.001/lib/com.github.docker-java.docker-java-1.4.0.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider-2.1.2.jar  
+  inflating: claude-0.001/lib/com.fasterxml.jackson.module.jackson-module-jaxb-annotations-2.1.2.jar  
+  inflating: claude-0.001/lib/org.glassfish.jersey.connectors.jersey-apache-connector-2.11.jar  
+  inflating: claude-0.001/lib/org.apache.httpcomponents.httpclient-4.3.1.jar  
+  inflating: claude-0.001/lib/org.apache.httpcomponents.httpcore-4.3.jar  
+  inflating: claude-0.001/lib/commons-logging.commons-logging-1.1.3.jar  
+  inflating: claude-0.001/lib/org.glassfish.jersey.core.jersey-common-2.11.jar  
+  inflating: claude-0.001/lib/javax.ws.rs.javax.ws.rs-api-2.0.jar  
+  inflating: claude-0.001/lib/javax.annotation.javax.annotation-api-1.2.jar  
+  inflating: claude-0.001/lib/org.glassfish.jersey.bundles.repackaged.jersey-guava-2.11.jar  
+  inflating: claude-0.001/lib/org.glassfish.hk2.hk2-api-2.3.0-b05.jar  
+  inflating: claude-0.001/lib/org.glassfish.hk2.hk2-utils-2.3.0-b05.jar  
+  inflating: claude-0.001/lib/org.glassfish.hk2.external.aopalliance-repackaged-2.3.0-b05.jar  
+  inflating: claude-0.001/lib/org.glassfish.hk2.external.javax.inject-2.3.0-b05.jar  
+  inflating: claude-0.001/lib/org.glassfish.hk2.hk2-locator-2.3.0-b05.jar  
+  inflating: claude-0.001/lib/org.glassfish.hk2.osgi-resource-locator-1.0.1.jar  
+  inflating: claude-0.001/lib/org.glassfish.jersey.core.jersey-client-2.11.jar  
+  inflating: claude-0.001/lib/de.gesellix.unix-socket-factory-2015-01-27T15-02-14.jar  
+  inflating: claude-0.001/lib/org.apache.commons.commons-compress-1.5.jar  
+  inflating: claude-0.001/lib/org.tukaani.xz-1.2.jar  
+  inflating: claude-0.001/lib/commons-lang.commons-lang-2.6.jar  
+  inflating: claude-0.001/lib/commons-io.commons-io-2.3.jar  
+  inflating: claude-0.001/lib/org.bouncycastle.bcpkix-jdk15on-1.51.jar  
+  inflating: claude-0.001/lib/org.bouncycastle.bcprov-jdk15on-1.51.jar  
+  inflating: claude-0.001/lib/com.zaxxer.HikariCP-2.4.1.jar  
+  inflating: claude-0.001/lib/claude.claude-0.001-assets.jar  
+  inflating: claude-0.001/bin/claude  
+  inflating: claude-0.001/bin/claude.bat  
+  inflating: claude-0.001/conf/routes  
+  inflating: claude-0.001/conf/routes~  
+  inflating: claude-0.001/conf/application.conf~  
+  inflating: claude-0.001/conf/application.conf  
+  inflating: claude-0.001/conf/silhouette.conf  
+  inflating: claude-0.001/conf/play.plugins  
+  inflating: claude-0.001/conf/evolutions/default/1.sql~  
+  inflating: claude-0.001/conf/evolutions/default/1.sql  
+  inflating: claude-0.001/conf/evolutions/tests/2.sql  
+  inflating: claude-0.001/conf/evolutions/tests/1.sql  
+  inflating: claude-0.001/share/doc/api/index.js  
+  inflating: claude-0.001/share/doc/api/index.html  
+  inflating: claude-0.001/share/doc/api/ClaudeModule.html  
+  inflating: claude-0.001/share/doc/api/package.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/artistsAndOptionalGenresToArtistsWithWeightedGenresTrait.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/ArtistMethods.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/artistFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/ArtistController.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/Artist.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/ReverseArtistController.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/ArtistWithWeightedGenres.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/PatternAndArtist.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/package.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/javascript/ReverseArtistController.html  
+  inflating: claude-0.001/share/doc/api/artistsDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/lib/selected-right.png  
+  inflating: claude-0.001/share/doc/api/lib/index.js  
+  inflating: claude-0.001/share/doc/api/lib/object_diagram.png  
+  inflating: claude-0.001/share/doc/api/lib/filter_box_left2.gif  
+  inflating: claude-0.001/share/doc/api/lib/diagrams.js  
+  inflating: claude-0.001/share/doc/api/lib/template.css  
+  inflating: claude-0.001/share/doc/api/lib/jquery-ui.js  
+  inflating: claude-0.001/share/doc/api/lib/filterboxbarbg.png  
+  inflating: claude-0.001/share/doc/api/lib/type_diagram.png  
+  inflating: claude-0.001/share/doc/api/lib/jquery.layout.js  
+  inflating: claude-0.001/share/doc/api/lib/selected2-right.png  
+  inflating: claude-0.001/share/doc/api/lib/filterboxbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/packagesbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/valuemembersbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/object_big.png  
+  inflating: claude-0.001/share/doc/api/lib/type_big.png  
+  inflating: claude-0.001/share/doc/api/lib/arrow-right.png  
+  inflating: claude-0.001/share/doc/api/lib/template.js  
+  inflating: claude-0.001/share/doc/api/lib/filterbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/object_to_type_big.png  
+  inflating: claude-0.001/share/doc/api/lib/arrow-down.png  
+  inflating: claude-0.001/share/doc/api/lib/index.css  
+  inflating: claude-0.001/share/doc/api/lib/scheduler.js  
+  inflating: claude-0.001/share/doc/api/lib/trait_to_object_big.png  
+  inflating: claude-0.001/share/doc/api/lib/object_to_trait_big.png  
+  inflating: claude-0.001/share/doc/api/lib/diagrams.css  
+  inflating: claude-0.001/share/doc/api/lib/modernizr.custom.js  
+  inflating: claude-0.001/share/doc/api/lib/ownerbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/defbg-blue.gif  
+  inflating: claude-0.001/share/doc/api/lib/unselected.png  
+  inflating: claude-0.001/share/doc/api/lib/selected-right-implicits.png  
+  inflating: claude-0.001/share/doc/api/lib/selected2.png  
+  inflating: claude-0.001/share/doc/api/lib/type_to_object_big.png  
+  inflating: claude-0.001/share/doc/api/lib/signaturebg2.gif  
+  inflating: claude-0.001/share/doc/api/lib/filter_box_right.png  
+  inflating: claude-0.001/share/doc/api/lib/constructorsbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/typebg.gif  
+  inflating: claude-0.001/share/doc/api/lib/fullcommenttopbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/package_big.png  
+  inflating: claude-0.001/share/doc/api/lib/selected.png  
+  inflating: claude-0.001/share/doc/api/lib/selected-implicits.png  
+  inflating: claude-0.001/share/doc/api/lib/permalink.png  
+  inflating: claude-0.001/share/doc/api/lib/signaturebg.gif  
+  inflating: claude-0.001/share/doc/api/lib/object.png  
+  inflating: claude-0.001/share/doc/api/lib/ownerbg2.gif  
+  inflating: claude-0.001/share/doc/api/lib/object_to_class_big.png  
+  inflating: claude-0.001/share/doc/api/lib/trait_big.png  
+  inflating: claude-0.001/share/doc/api/lib/filterboxbarbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/class_diagram.png  
+  inflating: claude-0.001/share/doc/api/lib/remove.png  
+  inflating: claude-0.001/share/doc/api/lib/trait_diagram.png  
+  inflating: claude-0.001/share/doc/api/lib/navigation-li.png  
+  inflating: claude-0.001/share/doc/api/lib/tools.tooltip.js  
+  inflating: claude-0.001/share/doc/api/lib/class_big.png  
+  inflating: claude-0.001/share/doc/api/lib/package.png  
+  inflating: claude-0.001/share/doc/api/lib/conversionbg.gif  
+  inflating: claude-0.001/share/doc/api/lib/type.png  
+  inflating: claude-0.001/share/doc/api/lib/ref-index.css  
+  inflating: claude-0.001/share/doc/api/lib/defbg-green.gif  
+  inflating: claude-0.001/share/doc/api/lib/class_to_object_big.png  
+  inflating: claude-0.001/share/doc/api/lib/trait.png  
+  inflating: claude-0.001/share/doc/api/lib/filter_box_left.png  
+  inflating: claude-0.001/share/doc/api/lib/navigation-li-a.png  
+  inflating: claude-0.001/share/doc/api/lib/jquery.js  
+  inflating: claude-0.001/share/doc/api/lib/ownderbg2.gif  
+  inflating: claude-0.001/share/doc/api/lib/class.png  
+  inflating: claude-0.001/share/doc/api/application/EmptyAddress.html  
+  inflating: claude-0.001/share/doc/api/application/UserOAuth2InfoWronglyFormatted.html  
+  inflating: claude-0.001/share/doc/api/application/SocialAuthController.html  
+  inflating: claude-0.001/share/doc/api/application/CredentialsAuthController.html  
+  inflating: claude-0.001/share/doc/api/application/Global.html  
+  inflating: claude-0.001/share/doc/api/application/ConnectionTrait$SignInInfo.html  
+  inflating: claude-0.001/share/doc/api/application/User.html  
+  inflating: claude-0.001/share/doc/api/application/ThereIsNoArtistForThisFacebookIdException.html  
+  inflating: claude-0.001/share/doc/api/application/PlaylistDoesNotExistException.html  
+  inflating: claude-0.001/share/doc/api/application/PlaylistUpdateTrackWithoutRankException.html  
+  inflating: claude-0.001/share/doc/api/application/DAOException.html  
+  inflating: claude-0.001/share/doc/api/application/UserMethods.html  
+  inflating: claude-0.001/share/doc/api/application/CredentialsAuthController$Data.html  
+  inflating: claude-0.001/share/doc/api/application/ThereIsNoOrganizerForThisFacebookIdException.html  
+  inflating: claude-0.001/share/doc/api/application/SignUpController.html  
+  inflating: claude-0.001/share/doc/api/application/ReverseAdmin.html  
+  inflating: claude-0.001/share/doc/api/application/routes.html  
+  inflating: claude-0.001/share/doc/api/application/UserController.html  
+  inflating: claude-0.001/share/doc/api/application/ReverseApplication.html  
+  inflating: claude-0.001/share/doc/api/application/ReverseSocialAuthController.html  
+  inflating: claude-0.001/share/doc/api/application/ReverseUserController.html  
+  inflating: claude-0.001/share/doc/api/application/ArtistContainsEmptyWebsiteException.html  
+  inflating: claude-0.001/share/doc/api/application/WebServiceException.html  
+  inflating: claude-0.001/share/doc/api/application/ConnectionTrait.html  
+  inflating: claude-0.001/share/doc/api/application/Application.html  
+  inflating: claude-0.001/share/doc/api/application/SignUpController$Data2.html  
+  inflating: claude-0.001/share/doc/api/application/ThereIsNoPlaceForThisFacebookIdException.html  
+  inflating: claude-0.001/share/doc/api/application/package.html  
+  inflating: claude-0.001/share/doc/api/application/SchedulerException.html  
+  inflating: claude-0.001/share/doc/api/application/OverQueryLimit.html  
+  inflating: claude-0.001/share/doc/api/application/Admin.html  
+  inflating: claude-0.001/share/doc/api/application/javascript/ReverseAdmin.html  
+  inflating: claude-0.001/share/doc/api/application/javascript/ReverseApplication.html  
+  inflating: claude-0.001/share/doc/api/application/javascript/ReverseSocialAuthController.html  
+  inflating: claude-0.001/share/doc/api/application/javascript/ReverseUserController.html  
+  inflating: claude-0.001/share/doc/api/application/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/PlaylistMethods.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/Playlist.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/ReversePlaylistController.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/PlaylistWithTracksWithGenres.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/TrackWithPlaylistRankAndGenres.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/PlaylistController.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/playlistFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/PlaylistNameTracksIdAndRank.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/TrackWithPlaylistRank.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/PlaylistWithTracksIdAndRank.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/package.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/PlaylistWithTracks.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/TrackIdWithPlaylistRank.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/javascript/ReversePlaylistController.html  
+  inflating: claude-0.001/share/doc/api/playlistsDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/index/index-n.html  
+  inflating: claude-0.001/share/doc/api/index/index-v.html  
+  inflating: claude-0.001/share/doc/api/index/index-b.html  
+  inflating: claude-0.001/share/doc/api/index/index-k.html  
+  inflating: claude-0.001/share/doc/api/index/index-e.html  
+  inflating: claude-0.001/share/doc/api/index/index-c.html  
+  inflating: claude-0.001/share/doc/api/index/index-_.html  
+  inflating: claude-0.001/share/doc/api/index/index-j.html  
+  inflating: claude-0.001/share/doc/api/index/index-o.html  
+  inflating: claude-0.001/share/doc/api/index/index-p.html  
+  inflating: claude-0.001/share/doc/api/index/index-s.html  
+  inflating: claude-0.001/share/doc/api/index/index-z.html  
+  inflating: claude-0.001/share/doc/api/index/index-w.html  
+  inflating: claude-0.001/share/doc/api/index/index-i.html  
+  inflating: claude-0.001/share/doc/api/index/index-m.html  
+  inflating: claude-0.001/share/doc/api/index/index-r.html  
+  inflating: claude-0.001/share/doc/api/index/index-l.html  
+  inflating: claude-0.001/share/doc/api/index/index-q.html  
+  inflating: claude-0.001/share/doc/api/index/index-h.html  
+  inflating: claude-0.001/share/doc/api/index/index-f.html  
+  inflating: claude-0.001/share/doc/api/index/index-g.html  
+  inflating: claude-0.001/share/doc/api/index/index-t.html  
+  inflating: claude-0.001/share/doc/api/index/index-a.html  
+  inflating: claude-0.001/share/doc/api/index/index-u.html  
+  inflating: claude-0.001/share/doc/api/index/index-d.html  
+  inflating: claude-0.001/share/doc/api/jobs/Scheduler.html  
+  inflating: claude-0.001/share/doc/api/jobs/savePlacesFromTextFiles$.html  
+  inflating: claude-0.001/share/doc/api/jobs/package.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/PlaceMethods.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/ReversePlaceController.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/Place.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/PlaceWithAddress.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/PlaceController.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/package.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/placeFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/javascript/ReversePlaceController.html  
+  inflating: claude-0.001/share/doc/api/placesDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/akka/package.html  
+  inflating: claude-0.001/share/doc/api/akka/pattern/package.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$UserLoginInfos.html  
+  inflating: claude-0.001/share/doc/api/silhouette/SilhouetteModule.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$OAuth2Infos.html  
+  inflating: claude-0.001/share/doc/api/silhouette/OpenIDInfoDAO.html  
+  inflating: claude-0.001/share/doc/api/silhouette/OAuth1InfoDAO.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$LoginInfos.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$OAuth1Infos.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$OpenIDAttributes.html  
+  inflating: claude-0.001/share/doc/api/silhouette/UserDAOImpl.html  
+  inflating: claude-0.001/share/doc/api/silhouette/PasswordInfoDAO.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$PasswordInfos.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBOpenIDInfo.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBLoginInfo.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$Users.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBPasswordInfo.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$OpenIDInfos.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBUser.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBOAuth1Info.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBOpenIDAttribute.html  
+  inflating: claude-0.001/share/doc/api/silhouette/OAuth2InfoDAO.html  
+  inflating: claude-0.001/share/doc/api/silhouette/UserDAO.html  
+  inflating: claude-0.001/share/doc/api/silhouette/package.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DAOSlick.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBOAuth2Info.html  
+  inflating: claude-0.001/share/doc/api/silhouette/DBTableDefinitions$DBUserLoginInfo.html  
+  inflating: claude-0.001/share/doc/api/fillDatabase/ReverseInitController.html  
+  inflating: claude-0.001/share/doc/api/fillDatabase/routes.html  
+  inflating: claude-0.001/share/doc/api/fillDatabase/InitController.html  
+  inflating: claude-0.001/share/doc/api/fillDatabase/package.html  
+  inflating: claude-0.001/share/doc/api/fillDatabase/javascript/ReverseInitController.html  
+  inflating: claude-0.001/share/doc/api/fillDatabase/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/views/package.html  
+  inflating: claude-0.001/share/doc/api/views/html/main_Scope0$.html  
+  inflating: claude-0.001/share/doc/api/views/html/main$.html  
+  inflating: claude-0.001/share/doc/api/views/html/index_Scope0$$index.html  
+  inflating: claude-0.001/share/doc/api/views/html/index_Scope0$.html  
+  inflating: claude-0.001/share/doc/api/views/html/main_Scope0$$main.html  
+  inflating: claude-0.001/share/doc/api/views/html/index$.html  
+  inflating: claude-0.001/share/doc/api/views/html/package.html  
+  inflating: claude-0.001/share/doc/api/views/html/admin/indexAdmin_Scope0$.html  
+  inflating: claude-0.001/share/doc/api/views/html/admin/indexAdmin_Scope0$$indexAdmin.html  
+  inflating: claude-0.001/share/doc/api/views/html/admin/indexAdmin$.html  
+  inflating: claude-0.001/share/doc/api/views/html/admin/package.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/ReverseEventController.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/Event.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/EventMethods$MaybeOwnerAndPlaceIds.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/EventWithRelations.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/eventFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/EventController.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/package.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/EventMethods.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/eventWithRelationsTupleToEventWithRelationsClass.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/javascript/ReverseEventController.html  
+  inflating: claude-0.001/share/doc/api/eventsDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$PlacesFollowed.html  
+  inflating: claude-0.001/share/doc/api/database/EventAddressRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Places.html  
+  inflating: claude-0.001/share/doc/api/database/UserPlaceRelation.html  
+  inflating: claude-0.001/share/doc/api/database/UserGenreRelation.html  
+  inflating: claude-0.001/share/doc/api/database/EventArtistRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$TracksGenres.html  
+  inflating: claude-0.001/share/doc/api/database/PlaylistTrack.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Addresses.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$EventsOrganizers.html  
+  inflating: claude-0.001/share/doc/api/database/TrackGenreRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$TrackRatings.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Genres.html  
+  inflating: claude-0.001/share/doc/api/database/ArtistGenreRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$ArtistsGenres.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$IssuesComments.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Issues.html  
+  inflating: claude-0.001/share/doc/api/database/MyPostgresDriver$.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Tracks.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$EventsAddresses.html  
+  inflating: claude-0.001/share/doc/api/database/MyPostgresDriver.html  
+  inflating: claude-0.001/share/doc/api/database/UserOrganizerRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$SetUUID$.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Events.html  
+  inflating: claude-0.001/share/doc/api/database/UserArtistRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$EventsPlaces.html  
+  inflating: claude-0.001/share/doc/api/database/EventPlaceRelation.html  
+  inflating: claude-0.001/share/doc/api/database/FrenchCity.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$EventsFollowed.html  
+  inflating: claude-0.001/share/doc/api/database/MyPostgresDriver$ImplicitsPlus.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$TracksFollowed.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$OrganizersFollowed.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions.html  
+  inflating: claude-0.001/share/doc/api/database/EventGenreRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$ArtistsFollowed.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Artists.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Playlists.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$GenresFollowed.html  
+  inflating: claude-0.001/share/doc/api/database/UserEventRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$Organizers.html  
+  inflating: claude-0.001/share/doc/api/database/MyPostgresDriver$SimpleQLPlus.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$EventsArtists.html  
+  inflating: claude-0.001/share/doc/api/database/UserTrackRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$PlaylistsTracks.html  
+  inflating: claude-0.001/share/doc/api/database/EventOrganizerRelation.html  
+  inflating: claude-0.001/share/doc/api/database/package.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$EventsGenres.html  
+  inflating: claude-0.001/share/doc/api/database/EventTariffRelation.html  
+  inflating: claude-0.001/share/doc/api/database/MyDBTableDefinitions$FrenchCities.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/organizerFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/OrganizerWithAddress.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/OrganizerController.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/OrganizerMethods.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/package.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/ReverseOrganizerController.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/Organizer.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/organizersDomain/javascript/ReverseOrganizerController.html  
+  inflating: claude-0.001/share/doc/api/services/UserService.html  
+  inflating: claude-0.001/share/doc/api/services/PageIdAndCategory.html  
+  inflating: claude-0.001/share/doc/api/services/FollowService.html  
+  inflating: claude-0.001/share/doc/api/services/DistinctBy.html  
+  inflating: claude-0.001/share/doc/api/services/GetUserLikedPagesOnFacebook.html  
+  inflating: claude-0.001/share/doc/api/services/Utilities.html  
+  inflating: claude-0.001/share/doc/api/services/package.html  
+  inflating: claude-0.001/share/doc/api/services/UserServiceImplementation.html  
+  inflating: claude-0.001/share/doc/api/issues/IssueController.html  
+  inflating: claude-0.001/share/doc/api/issues/IssueFormsTrait$PartialIssue.html  
+  inflating: claude-0.001/share/doc/api/issues/routes.html  
+  inflating: claude-0.001/share/doc/api/issues/ReverseIssueController.html  
+  inflating: claude-0.001/share/doc/api/issues/IssueComment.html  
+  inflating: claude-0.001/share/doc/api/issues/IssueFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/issues/Issue.html  
+  inflating: claude-0.001/share/doc/api/issues/IssueMethods.html  
+  inflating: claude-0.001/share/doc/api/issues/package.html  
+  inflating: claude-0.001/share/doc/api/issues/javascript/ReverseIssueController.html  
+  inflating: claude-0.001/share/doc/api/issues/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/addresses/ReverseCityController.html  
+  inflating: claude-0.001/share/doc/api/addresses/City.html  
+  inflating: claude-0.001/share/doc/api/addresses/AddressController.html  
+  inflating: claude-0.001/share/doc/api/addresses/geographicPointTrait.html  
+  inflating: claude-0.001/share/doc/api/addresses/AddressMethods.html  
+  inflating: claude-0.001/share/doc/api/addresses/routes.html  
+  inflating: claude-0.001/share/doc/api/addresses/CityController.html  
+  inflating: claude-0.001/share/doc/api/addresses/addressFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/addresses/CityMethods.html  
+  inflating: claude-0.001/share/doc/api/addresses/Address.html  
+  inflating: claude-0.001/share/doc/api/addresses/package.html  
+  inflating: claude-0.001/share/doc/api/addresses/SearchGeographicPoint.html  
+  inflating: claude-0.001/share/doc/api/addresses/javascript/ReverseCityController.html  
+  inflating: claude-0.001/share/doc/api/addresses/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/controllers/ReverseAssets.html  
+  inflating: claude-0.001/share/doc/api/controllers/routes.html  
+  inflating: claude-0.001/share/doc/api/controllers/package.html  
+  inflating: claude-0.001/share/doc/api/controllers/javascript/ReverseAssets.html  
+  inflating: claude-0.001/share/doc/api/controllers/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/GenreController.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/ReverseGenreController.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/Genre.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/GenreMethods.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/genreFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/package.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/GenreWithWeight.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/javascript/ReverseGenreController.html  
+  inflating: claude-0.001/share/doc/api/genresDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/others/Info.html  
+  inflating: claude-0.001/share/doc/api/others/Ticket.html  
+  inflating: claude-0.001/share/doc/api/others/InfoMethods.html  
+  inflating: claude-0.001/share/doc/api/others/ReverseTicketController.html  
+  inflating: claude-0.001/share/doc/api/others/MailController.html  
+  inflating: claude-0.001/share/doc/api/others/Image.html  
+  inflating: claude-0.001/share/doc/api/others/Test.html  
+  inflating: claude-0.001/share/doc/api/others/TariffMethods.html  
+  inflating: claude-0.001/share/doc/api/others/routes.html  
+  inflating: claude-0.001/share/doc/api/others/ReverseTest.html  
+  inflating: claude-0.001/share/doc/api/others/MailMethods.html  
+  inflating: claude-0.001/share/doc/api/others/StatisticController$.html  
+  inflating: claude-0.001/share/doc/api/others/Mail.html  
+  inflating: claude-0.001/share/doc/api/others/Tariff.html  
+  inflating: claude-0.001/share/doc/api/others/Tool.html  
+  inflating: claude-0.001/share/doc/api/others/Order.html  
+  inflating: claude-0.001/share/doc/api/others/OrderMethods.html  
+  inflating: claude-0.001/share/doc/api/others/ImageMethods.html  
+  inflating: claude-0.001/share/doc/api/others/Ticket$.html  
+  inflating: claude-0.001/share/doc/api/others/TicketController.html  
+  inflating: claude-0.001/share/doc/api/others/Tool$.html  
+  inflating: claude-0.001/share/doc/api/others/package.html  
+  inflating: claude-0.001/share/doc/api/others/javascript/ReverseTicketController.html  
+  inflating: claude-0.001/share/doc/api/others/javascript/ReverseTest.html  
+  inflating: claude-0.001/share/doc/api/others/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/TrackWithGenres.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/TrackMethods.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/ReverseSearchTracksController.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/trackFormsTrait.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/trackFormsTrait$TrackRating.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/TrackTransformTrait.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/SearchYoutubeTracks.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/TrackRatingMethods.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/SoundCloudHelper.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/TrackController.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/routes.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/SearchTracksController.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/Rating.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/TrackRating.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/Track.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/package.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/ReverseTrackController.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/WebsitesForSoundcloudId.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/SearchSoundCloudTracks.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/SoundCloudArtistConfidence.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/javascript/ReverseSearchTracksController.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/javascript/package.html  
+  inflating: claude-0.001/share/doc/api/tracksDomain/javascript/ReverseTrackController.html  
+  inflating: claude-0.001/share/doc/api/actors/DuplicateTracksActor$$FilterTracks.html  
+  inflating: claude-0.001/share/doc/api/actors/DuplicateTracksActor$.html  
+  inflating: claude-0.001/share/doc/api/actors/DuplicateTracksActor$TrackTitleAndArtistFacebookUrl.html  
+  inflating: claude-0.001/share/doc/api/actors/DuplicateTracksActor.html  
+  inflating: claude-0.001/share/doc/api/actors/DuplicateTracksActor$$DoneForArtist.html  
+  inflating: claude-0.001/share/doc/api/actors/DuplicateTracksActorInstance.html  
+  inflating: claude-0.001/share/doc/api/actors/package.html  
+  inflating: claude-0.001/share/doc/api/json/JsonHelper$$CharReads$.html  
+  inflating: claude-0.001/share/doc/api/json/JsonHelper$$CharWrites$.html  
+  inflating: claude-0.001/share/doc/api/json/JsonHelper$$UUIDWrites$.html  
+  inflating: claude-0.001/share/doc/api/json/JsonHelper$$JavaBigDecimalWrites$.html  
+  inflating: claude-0.001/share/doc/api/json/JsonHelper$.html  
+  inflating: claude-0.001/share/doc/api/json/package.html  
+  inflating: claude-0.001/share/doc/api/router/Routes.html  
+  inflating: claude-0.001/share/doc/api/router/RoutesPrefix$.html  
+  inflating: claude-0.001/share/doc/api/router/package.html  
+[[33mwarn[0m] p.a.d.e.ApplicationEvolutions - Your production database [tests] needs evolutions! 
+
+# --- Rev:1,Ups - 660361d
+CREATE TABLE infos (
+infoId                    SERIAL PRIMARY KEY,
+displayIfConnected        BOOLEAN NOT NULL DEFAULT TRUE,
+title                     VARCHAR NOT NULL,
+content                   VARCHAR,
+animationContent          VARCHAR,
+animationStyle            VARCHAR
+);
+
+
+CREATE TABLE frenchCities (
+cityId                    SERIAL PRIMARY KEY,
+city                      VARCHAR(255) NOT NULL,
+geographicPoint           GEOMETRY NOT NULL
+);
+CREATE INDEX frenchCityGeographicPoints ON frenchCities USING GIST (geographicPoint);
+CREATE INDEX frenchCityNames ON frenchCities (city);
+
+
+CREATE TABLE addresses (
+addressId                 SERIAL PRIMARY KEY,
+geographicPoint           GEOMETRY,
+city                      VARCHAR(127),
+zip                       VARCHAR(15),
+street                    VARCHAR
+);
+CREATE INDEX geographicPointAddresses ON addresses USING GIST (geographicPoint);
+CREATE UNIQUE INDEX addressesIndex ON addresses (city, zip, street);
+
+
+CREATE TABLE orders ( --account701
+orderId                   SERIAL PRIMARY KEY,
+totalPrice                INT NOT NULL
+);
+
+CREATE TABLE artists (
+artistId                  SERIAL PRIMARY KEY,
+creationDateTime          TIMESTAMP DEFAULT current_timestamp NOT NULL,
+facebookId                VARCHAR(63),
+name                      VARCHAR(255) NOT NULL,
+imagePath                 VARCHAR,
+description               VARCHAR,
+facebookUrl               VARCHAR(255) NOT NULL,
+websites                  VARCHAR,
+hasTracks                 BOOLEAN DEFAULT FALSE,
+likes                     INTEGER,
+country                   VARCHAR,
+UNIQUE(facebookId),
+UNIQUE(facebookUrl)
+);
+
+
+CREATE TABLE organizers (
+organizerId             SERIAL PRIMARY KEY,
+facebookId              VARCHAR(63),
+name                    VARCHAR(255) NOT NULL,
+description             VARCHAR,
+addressId               BIGINT references addresses(addressId),
+phone                   VARCHAR(255),
+publicTransit           VARCHAR,
+websites                VARCHAR,
+verified                BOOLEAN DEFAULT FALSE NOT NULL,
+imagePath               VARCHAR,
+geographicPoint         GEOMETRY,
+placeId                 BIGINT,
+UNIQUE(facebookId)
+);
+
+
+CREATE TABLE genres (
+genreId                 SERIAL PRIMARY KEY,
+name                    CITEXT NOT NULL,
+icon                    CHAR NOT NULL,
+UNIQUE(name)
+);
+
+
+CREATE TABLE tracks (
+trackId                 UUID PRIMARY KEY NOT NULL,
+title                   VARCHAR(255) NOT NULL,
+url                     VARCHAR NOT NULL,
+platform                CHAR NOT NULL,
+thumbnailUrl            VARCHAR NOT NULL,
+artistFacebookUrl       VARCHAR(255) REFERENCES artists(facebookUrl) NOT NULL,
+artistName              VARCHAR(255) NOT NULL,
+redirectUrl             VARCHAR(255),
+confidence              DOUBLE PRECISION NOT NULL DEFAULT 0,
+ratingUp                INT NOT NULL DEFAULT 0,
+ratingDown              INT NOT NULL DEFAULT 0,
+UNIQUE(url)
+);
+CREATE UNIQUE INDEX artistNameAndTitle ON tracks(title, artistName);
+CREATE INDEX artistFacebookUrl ON tracks(artistFacebookUrl);
+
+
+create table users (
+userID UUID PRIMARY KEY,
+firstName VARCHAR,
+lastName VARCHAR,
+fullName VARCHAR,
+email VARCHAR UNIQUE,
+avatarURL VARCHAR);
+
+create table logininfo (
+id SERIAL PRIMARY KEY,
+providerID VARCHAR NOT NULL,
+providerKey VARCHAR NOT NULL);
+
+create table userlogininfo (userID UUID PRIMARY KEY, loginInfoId BIGINT NOT NULL);
+create table passwordinfo (hasher VARCHAR NOT NULL,password VARCHAR NOT NULL,salt VARCHAR,loginInfoId BIGINT NOT NULL);
+create table oauth1info (id SERIAL PRIMARY KEY,token VARCHAR NOT NULL,secret VARCHAR NOT NULL,loginInfoId BIGINT NOT NULL);
+create table oauth2info (id SERIAL PRIMARY KEY,accesstoken VARCHAR NOT NULL,tokentype VARCHAR,expiresin INTEGER,refreshtoken VARCHAR,logininfoid BIGINT NOT NULL);
+create table openidinfo (id VARCHAR NOT NULL PRIMARY KEY,logininfoid BIGINT NOT NULL);
+create table openidattributes (id VARCHAR NOT NULL,key VARCHAR NOT NULL,value VARCHAR NOT NULL);
+
+
+CREATE TABLE receivedMails (
+id                        SERIAL PRIMARY KEY,
+subject                   VARCHAR NOT NULL,
+message                   VARCHAR NOT NULL,
+read                      BOOLEAN NOT NULL DEFAULT FALSE,
+userId                    UUID REFERENCES users(userId)
+);
+
+CREATE TABLE events (
+eventId                   SERIAL PRIMARY KEY,
+facebookId                VARCHAR(63),
+isPublic                  BOOLEAN NOT NULL,
+isActive                  BOOLEAN NOT NULL,
+creationDateTime          TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                      VARCHAR(255) NOT NULL,
+geographicPoint           GEOMETRY,
+description               VARCHAR,
+startTime                 TIMESTAMP NOT NULL,
+endTime                   TIMESTAMP,
+imagePath                 VARCHAR,
+ageRestriction            SMALLINT NOT NULL DEFAULT 16,
+tariffRange               VARCHAR(15),
+ticketSellers             VARCHAR,
+UNIQUE(facebookId)
+);
+CREATE INDEX eventGeographicPoint ON events USING GIST (geographicPoint);
+
+
+CREATE TABLE places (
+placeId                   SERIAL PRIMARY KEY,
+name                      VARCHAR(255) NOT NULL,
+geographicPoint           GEOMETRY,
+addressId                 BIGINT references addresses(addressId),
+facebookId                VARCHAR(63),
+description               VARCHAR,
+webSites                  VARCHAR,
+facebookMiniature         VARCHAR,
+capacity                  INT,
+openingHours              VARCHAR(255),
+imagePath                 VARCHAR,
+linkedOrganizerId         BIGINT,
+UNIQUE(facebookId)
+);
+CREATE INDEX placeGeographicPoint ON places USING GIST (geographicPoint);
+INSERT into places(name, geographicPoint, facebookId)
+values ('Le transbordeur', ST_GeomFromText('POINT(45.783808 4.860598)', 4326), '117030545096697');
+
+
+CREATE TABLE images (
+imageId                   SERIAL PRIMARY KEY,
+path                      VARCHAR NOT NULL,
+category                  VARCHAR(31),
+organizerId               BIGINT REFERENCES organizers(organizerId),
+infoId                    BIGINT REFERENCES infos(infoId),
+trackId                   UUID REFERENCES tracks(trackId),
+UNIQUE(path)
+);
+
+CREATE TABLE tariffs (
+tariffId                 SERIAL PRIMARY KEY,
+denomination             VARCHAR(255) DEFAULT 'Basique' NOT NULL,
+nbTicketToSell           INT NOT NULL,
+nbTicketSold             INT DEFAULT 0 NOT NULL,
+price                    NUMERIC NOT NULL,
+startTime                TIMESTAMP NOT NULL,
+endTime                  TIMESTAMP NOT NULL,
+eventId                  BIGINT REFERENCES events(eventId)
+);
+
+CREATE TABLE tickets (
+ticketId                  SERIAL PRIMARY KEY,
+isValid                   BOOLEAN DEFAULT TRUE,
+qrCode                    VARCHAR(255) NOT NULL,
+firstName                 VARCHAR(255),
+lastName                  VARCHAR(255),
+tariffId                  INT REFERENCES tariffs(tariffId),
+orderId                   INT REFERENCES orders(orderId)
+);
+--INSERT INTO tickets (tariffId, orderId) VALUES (1, 1);
+
+---CREATE TABLE tariffsBlocked (
+---  tariffsBlockedId         SERIAL PRIMARY KEY,
+---  endTime                  TIMESTAMP DEFAULT current_timestamp + time '00:15' NOT NULL,
+---  tariffId                 BIGINT REFERENCES tariffs(tariffId)
+---);
+
+CREATE TABLE issues (
+issueId                   SERIAL PRIMARY KEY,
+title                     VARCHAR NOT NULL,
+content                   VARCHAR,
+userId                    UUID REFERENCES users (userId),
+fixed                     BOOLEAN DEFAULT FALSE NOT NULL
+);
+
+CREATE TABLE issuesComments (
+commentId                 SERIAL PRIMARY KEY,
+content                   VARCHAR,
+userId                    UUID REFERENCES users (userId),
+issueId                   BIGINT REFERENCES issues(issueId)
+);
+
+CREATE TABLE usersTools (
+tableId                   SERIAL PRIMARY KEY,
+tools                     VARCHAR(255) NOT NULL,
+userId                    UUID REFERENCES users(userId)
+);
+
+---############################## ACCOUNTING ###################################
+
+---Vente de produits finis = account701 = table order
+
+CREATE TABLE clients (
+clientId                SERIAL PRIMARY KEY,
+name                    VARCHAR(255),
+contactName             VARCHAR(255),
+socialDenomination      VARCHAR(255),
+addressID               BIGINT references addresses(addressID),
+email                   VARCHAR(255),
+UNIQUE(email)
+);
+
+CREATE TABLE bills (
+id                      SERIAL PRIMARY KEY,
+clientId                BIGINT REFERENCES clients(clientId),
+billingDate             TIMESTAMP,
+amountDue               INT,
+endSellingTime          TIMESTAMP
+--majorations impayés
+);
+
+
+--Produit activités annexes = compte 708
+CREATE TABLE account708 (
+id                      SERIAL PRIMARY KEY,
+date                    TIMESTAMP DEFAULT  current_timestamp NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+amount                  NUMERIC NOT NULL,
+clientId                BIGINT NOT NULL REFERENCES clients(clientId),
+orderId                 BIGINT NOT NULL REFERENCES orders(orderId)
+);
+
+--Quand le client a payé sa facture
+CREATE TABLE account411 (
+id                      SERIAL PRIMARY KEY,
+clientId                BIGINT NOT NULL REFERENCES clients(clientId),
+paymentDate             TIMESTAMP NOT NULL,
+amount                  INT NOT NULL,
+paymentMean             VARCHAR(255) NOT NULL
+);
+
+--Ce qui est dû par le client
+CREATE TABLE account413 (
+id                      SERIAL PRIMARY KEY,
+clientId                BIGINT REFERENCES clients(clientId),
+date                    TIMESTAMP DEFAULT current_timestamp NOT NULL,
+amount                  INT NOT NULL,
+debit                   Boolean NOT NULL
+);
+
+--Accomptes payés par les clients
+CREATE TABLE account4191 (
+id                      SERIAL PRIMARY KEY,
+clientId                BIGINT REFERENCES clients(clientId),
+billId                  BIGINT REFERENCES bills(id),
+paymentDate             TIMESTAMP NOT NULL,
+amount                  INT NOT NULL,
+paymentMean             VARCHAR(255) NOT NULL
+);
+
+
+--associés, dividendes à payer
+CREATE TABLE account457 (
+id                      SERIAL PRIMARY KEY,
+date                    TIMESTAMP DEFAULT  current_timestamp NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+paymentReference        INT NOT NULL,
+assemblyName            VARCHAR(255) NOT NULL
+);
+
+--impôts et taxes
+CREATE TABLE account63 (
+id                      SERIAL PRIMARY KEY,
+datePayment             TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+amount                  NUMERIC NOT NULL,
+orderId                 BIGINT references orders(orderId),
+account708Id            BIGINT references account708(id)
+);
+
+--diverses charges à payer
+CREATE TABLE account4686 (
+id                      SERIAL PRIMARY KEY,
+date                    TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                    VARCHAR(255),
+amount                  NUMERIC NOT NULL,
+debit                   BOOLEAN NOT NULL,
+account63Id             BIGINT references account63(id)
+);
+
+
+--achats
+CREATE TABLE account60 (
+id                      SERIAL PRIMARY KEY,
+datePayment             TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+amount                  NUMERIC NOT NULL,
+paymentReference        INT,
+orderId                 BIGINT REFERENCES orders(orderId)
+);
+
+--Fournisseurs à payer
+CREATE TABLE account403 (
+id                      SERIAL PRIMARY KEY,
+date                    TIMESTAMP DEFAULT current_timestamp NOT NULL,
+amount                  NUMERIC NOT NULL,
+debit                   BOOLEAN NOT NULL, --#sinon debit
+userId                  UUID REFERENCES users(userId),
+account60Id             BIGINT REFERENCES account60(id)
+);
+
+--frais postaux et telecoms
+CREATE TABLE account626 (
+id                      SERIAL PRIMARY KEY,
+datePayment             TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+amount                  NUMERIC NOT NULL,
+paymentReference        INT NOT NULL
+);
+
+--services bancaires
+CREATE TABLE account627 (
+id                      SERIAL PRIMARY KEY,
+datePayment             TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+amount                  NUMERIC NOT NULL,
+orderId                 BIGINT REFERENCES orders(orderId)
+);
+
+
+CREATE TABLE bank ( --account512
+id                      SERIAL PRIMARY KEY,
+datePayment             TIMESTAMP DEFAULT current_timestamp NOT NULL,
+name                    VARCHAR(255) DEFAULT '666' NOT NULL,
+amount                  NUMERIC NOT NULL,
+debit                   Boolean NOT NULL,
+paymentReference        INT DEFAULT 0 NOT NULL,
+orderId                 BIGINT REFERENCES orders(orderId),
+account627Id            BIGINT REFERENCES account627(id)
+);
+
+--publicité publications et relations publiques
+CREATE TABLE account623 (
+id                      SERIAL PRIMARY KEY,
+datePayment             TIMESTAMP DEFAULT  current_timestamp NOT NULL,
+amount                  NUMERIC NOT NULL,
+name                    VARCHAR(255) NOT NULL,
+paymentReference        INT NOT NULL,
+billId                  BIGINT REFERENCES bills(id)
+);
+
+CREATE TABLE eventsFollowed (
+tableId                  SERIAL PRIMARY KEY,
+userId                   UUID REFERENCES users(userId),
+eventId                  BIGINT REFERENCES events(eventId)
+);
+CREATE UNIQUE INDEX eventsFollowedIndex ON eventsFollowed (userId, eventId);
+
+CREATE TABLE artistsFollowed (
+tableId                  SERIAL PRIMARY KEY,
+userId                   UUID REFERENCES users(userId),
+artistId                 INT REFERENCES artists(artistId)
+);
+CREATE UNIQUE INDEX artistsFollowedIndex ON artistsFollowed (userId, artistId);
+
+
+CREATE TABLE placesFollowed (
+tableId                  SERIAL PRIMARY KEY,
+userId                   UUID REFERENCES users(userId),
+placeId                  INT REFERENCES places(placeId)  NOT NULL
+);
+CREATE UNIQUE INDEX placesFollowedIndex ON placesFollowed (userId, placeId);
+
+CREATE TABLE usersFollowed (
+tableId                 SERIAL PRIMARY KEY,
+userIdFollower          UUID REFERENCES users(userId),
+userIdFollowed          UUID REFERENCES users(userId)
+);
+CREATE UNIQUE INDEX usersFollowedIndex ON usersFollowed (userIdFollower, userIdFollowed);
+
+CREATE TABLE organizersFollowed (
+tableId                 SERIAL PRIMARY KEY,
+userId                  UUID REFERENCES users(userId),
+organizerId             INT REFERENCES organizers(organizerId)  NOT NULL
+);
+CREATE UNIQUE INDEX organizersFollowedIndex ON organizersFollowed (userId, organizerId);
+
+CREATE TABLE tracksFollowed (
+tableId                  SERIAL PRIMARY KEY,
+userId                   UUID REFERENCES users(userId),
+trackId                  UUID REFERENCES tracks(trackId)
+);
+CREATE UNIQUE INDEX tracksFollowedIndex ON tracksFollowed (userId, trackId);
+
+CREATE TABLE eventsPlaces (
+eventId                 BIGINT REFERENCES events (eventId) ON DELETE CASCADE,
+placeId                 INT REFERENCES places (placeId) ON DELETE CASCADE,
+PRIMARY KEY (eventId, placeId)
+);
+
+
+CREATE TABLE eventsGenres (
+eventId                 INT REFERENCES events (eventId) ON DELETE CASCADE,
+genreId                 INT REFERENCES genres (genreId) ON DELETE CASCADE,
+PRIMARY KEY (eventId, genreId)
+);
+
+
+CREATE TABLE eventsOrganizers (
+eventId                 INT REFERENCES events (eventId) ON DELETE CASCADE,
+organizerId             INT REFERENCES organizers(organizerId) ON DELETE CASCADE,
+PRIMARY KEY (eventId, organizerId)
+);
+
+
+CREATE TABLE eventsAddresses (
+eventId                 INT REFERENCES events (eventId) ON DELETE CASCADE,
+addressId               INT REFERENCES addresses(addressId) ON DELETE CASCADE,
+PRIMARY KEY (eventId, addressId)
+);
+
+
+CREATE TABLE usersOrganizers (
+tableId                 SERIAL PRIMARY KEY,
+userId                  UUID REFERENCES users(userId),
+organizerId             INT REFERENCES organizers(organizerId)
+);
+CREATE UNIQUE INDEX usersOrganizersIndex ON usersOrganizers (userId, organizerId);
+
+
+CREATE TABLE eventsArtists (
+eventId                 INT REFERENCES events (eventId) ON DELETE CASCADE,
+artistId                INT REFERENCES artists (artistId) ON DELETE CASCADE,
+PRIMARY KEY (eventId, artistId)
+);
+
+
+CREATE TABLE tracksGenres (
+trackId                 UUID REFERENCES tracks (trackId) NOT NULL,
+genreId                 INT REFERENCES genres (genreId) NOT NULL,
+weight                  BIGINT NOT NULL,
+PRIMARY KEY (genreId)
+);
+CREATE UNIQUE INDEX tracksGenresIndex ON tracksGenres (trackId, genreId);
+
+
+CREATE TABLE artistsGenres (
+artistId                INT REFERENCES artists (artistId),
+genreId                 INT REFERENCES genres (genreId),
+weight                  INT NOT NULL,
+PRIMARY KEY (artistId, genreId)
+);
+
+
+CREATE TABLE playlists (
+playlistId              SERIAL PRIMARY KEY,
+userId                  UUID REFERENCES users(userId) ON DELETE CASCADE NOT NULL,
+name                    VARCHAR(255) NOT NULL
+);
+CREATE UNIQUE INDEX playlistsIndex ON playlists (playlistId, userId);
+
+
+CREATE TABLE playlistsTracks (
+tableId                 SERIAL PRIMARY KEY,
+playlistId              BIGINT REFERENCES playlists (playlistId) ON DELETE CASCADE,
+trackId                 UUID REFERENCES tracks (trackId) ON DELETE CASCADE,
+trackRank               DOUBLE PRECISION NOT NULL
+);
+CREATE UNIQUE INDEX playlistsTracksIndex ON playlistsTracks (playlistId, trackId);
+
+
+CREATE TABLE tracksRating (
+tableId                 SERIAL PRIMARY KEY,
+userId                  UUID REFERENCES users(userId) NOT NULL,
+trackId                 UUID REFERENCES tracks (trackId) NOT NULL,
+ratingUp                INT,
+ratingDown              INT,
+reason                  CHAR
+);
+CREATE UNIQUE INDEX tracksRatingIndex ON tracksRating (userId, trackId);
+
+# --- Rev:2,Ups - e190fc6
+-------------------------------------------------------- users ---------------------------------------------------------
+INSERT INTO users(userID, firstName, lastName, fullName, email, avatarURL) VALUES
+('a4aea509-1002-47d0-b55c-593c91cb32ae', 'simon', 'garnier', 'fullname', 'email0', 'avatarUrl');
+
+INSERT INTO users(userID, firstName, lastName, fullName, email, avatarURL) VALUES
+('b4aea509-1002-47d0-b55c-593c91cb32ae', 'simon', 'garnier', 'fullname', 'email00', 'avatarUrl');
+
+INSERT INTO users(userID, email) VALUES ('077f3ea6-2272-4457-a47e-9e9111108e44', 'user@facebook.com');
+
+-------------------------------------------------------- artists -------------------------------------------------------
+INSERT INTO artists(artistid, name, facebookurl) VALUES('100', 'name', 'facebookUrl0');
+INSERT INTO artists(artistid, name, facebookurl) VALUES('200', 'name0', 'facebookUrl00');
+INSERT INTO artists(artistid, facebookid, name, facebookurl)
+VALUES('300', 'facebookIdTestTrack', 'artistTest', 'artistFacebookUrlTestPlaylistModel');
+INSERT INTO artists(facebookid, name, facebookurl)
+VALUES('withoutEventRelation', 'withoutEventRelation', 'withoutEventRelation');
+INSERT INTO artists(facebookid, name, facebookurl) VALUES('testFindIdByFacebookId', 'name00', 'testFindIdByFacebookId');
+
+-------------------------------------------------------- tracks --------------------------------------------------------
+INSERT INTO tracks(trackid, title, url, platform, thumbnailurl, artistfacebookurl, artistname) VALUES
+('02894e56-08d1-4c1f-b3e4-466c069d15ed', 'title', 'url0', 'y', 'thumbnailUrl', 'facebookUrl0', 'artistName');
+INSERT INTO tracks(trackid, title, url, platform, thumbnailurl, artistfacebookurl, artistname) VALUES
+('13894e56-08d1-4c1f-b3e4-466c069d15ed', 'title0', 'url00', 'y', 'thumbnailUrl', 'facebookUrl0', 'artistName');
+INSERT INTO tracks(trackid, title, url, platform, thumbnailurl, artistfacebookurl, artistname) VALUES
+('24894e56-08d1-4c1f-b3e4-466c069d15ed', 'title00', 'url000', 'y', 'thumbnailUrl', 'facebookUrl00', 'artistName0');
+INSERT INTO tracks(trackid, title, url, platform, thumbnailurl, artistfacebookurl, artistname) VALUES
+('35894e56-08d1-4c1f-b3e4-466c069d15ed', 'title000', 'url0000', 'y', 'thumbnailUrl', 'facebookUrl00', 'artistName0');
+
+-------------------------------------------------------- playlists -----------------------------------------------------
+INSERT INTO playlists(userId, name) VALUES('077f3ea6-2272-4457-a47e-9e9111108e44', 'playlist0');
+
+-------------------------------------------------------- genres --------------------------------------------------------
+INSERT INTO genres(name, icon) VALUES('genretest0', 'a');
+INSERT INTO genres(name, icon) VALUES('genretest00', 'a');
+
+-------------------------------------------------------- artistsGenres -------------------------------------------------
+INSERT INTO artistsgenres(artistid, genreid, weight) VALUES
+((SELECT artistid FROM artists WHERE facebookurl = 'facebookUrl0'), (SELECT genreid FROM genres WHERE name = 'genreTest0'), 1);
+
+INSERT INTO artistsgenres(artistid, genreid, weight) VALUES
+((SELECT artistid FROM artists WHERE facebookurl = 'facebookUrl0'), (SELECT genreid FROM genres WHERE name = 'genreTest00'), 1);
+
+-------------------------------------------------------- events --------------------------------------------------------
+INSERT INTO events(ispublic, isactive, name, starttime, geographicpoint) VALUES(
+true, true, 'name0', current_timestamp, '01010000000917F2086ECC46409F5912A0A6161540');
+INSERT INTO events(ispublic, isactive, name, starttime, endtime) VALUES(
+true, true, 'eventPassed', timestamp '2012-08-24 14:00:00', timestamp '2012-08-24 14:00:00');
+INSERT INTO events(ispublic, isactive, name, starttime, endtime) VALUES(
+true, true, 'inProgressEvent', timestamp '2012-08-24 14:00:00', timestamp '2042-08-24 14:00:00');
+INSERT INTO events(ispublic, isactive, name, starttime) VALUES(
+true, true, 'eventPassedWithoutEndTime', timestamp '2012-08-24 14:00:00');
+INSERT INTO events(ispublic, isactive, name, starttime, geographicpoint)
+VALUES(true, true, 'notPassedEvent', timestamp '2040-08-24 14:00:00', '0101000000654D87A9886F4840D146640E38D10240');
+INSERT INTO events(eventid, ispublic, isactive, name, starttime, geographicpoint)
+VALUES(100, true, true, 'notPassedEvent2', timestamp '2050-08-24 14:00:00', '01010000008906CEBE97E346405187156EF9581340');
+
+-------------------------------------------------------- organizers ----------------------------------------------------
+INSERT INTO organizers(name) VALUES('name0');
+INSERT INTO organizers(organizerid, name, facebookid, geographicpoint)
+VALUES(100, 'name1', 'facebookId', '0101000020E6100000ED2B0FD253E446401503249A40711350');
+INSERT INTO organizers(organizerid, name, facebookid, geographicpoint)
+VALUES(300, 'name2', 'facebookId1', '0101000020E6100000ED2B0FD253E446401503249A40711340');
+
+-------------------------------------------------------- places --------------------------------------------------------
+INSERT INTO places(placeid, name, facebookid, geographicpoint)
+VALUES(100, 'Test', '776137029786070', '0101000020E6100000ED2B0FD253E446401503249A40711350');
+INSERT INTO places(placeid, name, facebookid, geographicpoint)
+VALUES(300, 'Test1', '666137029786070', '0101000020E6100000ED2B0FD253E446401503249A40711340');
+INSERT INTO places(placeid, name, facebookid)
+VALUES(400, 'testId4BecauseThereIsTRANSBORDEUR', 'facebookIdTestFollowController');
+INSERT INTO places(placeid, name, facebookid) VALUES(500, 'testId5', 'facebookIdTestFollowController2');
+
+-------------------------------------------------------- addresses -----------------------------------------------------
+INSERT INTO addresses(city) VALUES('lyon');
+
+-------------------------------------------------------- issues -----------------------------------------------------
+INSERT INTO issues(issueid, title, content, userid, fixed)
+VALUES(100, 'title', 'content', '077f3ea6-2272-4457-a47e-9e9111108e44', false);
+
+-------------------------------------------------------- eventsPlaces --------------------------------------------------
+INSERT INTO eventsplaces(eventid, placeid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), (SELECT placeid FROM places WHERE name = 'Test'));
+INSERT INTO eventsplaces(eventid, placeid) VALUES
+((SELECT eventId FROM events WHERE name = 'notPassedEvent'), (SELECT placeid FROM places WHERE name = 'Test'));
+INSERT INTO eventsplaces(eventid, placeid) VALUES
+((SELECT eventId FROM events WHERE name = 'notPassedEvent2'), (SELECT placeid FROM places WHERE name = 'Test'));
+
+-------------------------------------------------------- eventsOrganizers --------------------------------------------
+INSERT INTO eventsorganizers(eventid, organizerid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), (SELECT organizerid FROM organizers WHERE name = 'name0'));
+INSERT INTO eventsorganizers(eventid, organizerid) VALUES
+((SELECT eventId FROM events WHERE name = 'eventPassed'), (SELECT organizerid FROM organizers WHERE name = 'name0'));
+INSERT INTO eventsorganizers(eventid, organizerid) VALUES
+((SELECT eventId FROM events WHERE name = 'notPassedEvent2'), (SELECT organizerid FROM organizers WHERE name = 'name0'));
+
+-------------------------------------------------------- eventsGenres --------------------------------------------------
+INSERT INTO eventsgenres(eventid, genreid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), (SELECT genreid FROM genres WHERE name = 'genreTest0'));
+
+-------------------------------------------------------- eventsAddresses ---------------------------------------------
+INSERT INTO eventsaddresses(eventid, addressid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), (SELECT addressid FROM addresses WHERE city = 'lyon'));
+
+-------------------------------------------------------- eventsArtists -------------------------------------------------
+INSERT INTO eventsartists(eventid, artistid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), (SELECT artistid FROM artists WHERE facebookurl = 'facebookUrl0'));
+
+INSERT INTO eventsartists(eventid, artistid) VALUES
+((SELECT eventId FROM events WHERE name = 'eventPassed'), (SELECT artistid FROM artists WHERE facebookurl = 'facebookUrl0'));
+
+INSERT INTO eventsartists(eventid, artistid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), (SELECT artistid FROM artists WHERE facebookurl = 'facebookUrl00'));
+
+-------------------------------------------------------- eventsFollowed ------------------------------------------------
+INSERT INTO eventsfollowed(eventid, userid) VALUES
+((SELECT eventId FROM events WHERE name = 'name0'), '077f3ea6-2272-4457-a47e-9e9111108e44');
+
+-------------------------------------------------------- organizersFollowed --------------------------------------------
+INSERT INTO organizersfollowed(organizerid, userid) VALUES
+(1, '077f3ea6-2272-4457-a47e-9e9111108e44');
+
+-------------------------------------------------------- placesFollowed ------------------------------------------------
+INSERT INTO placesfollowed(placeid, userid) VALUES (400, '077f3ea6-2272-4457-a47e-9e9111108e44');
+
+-------------------------------------------------------- frenchCities --------------------------------------------------
+INSERT INTO frenchcities(city, geographicpoint) VALUES('lyon', '0101000020E6100000ED2B0FD253E446401503249A40711340');
+
+-------------------------------------------------------- playlistsTracks -----------------------------------------------
+INSERT INTO playliststracks(playlistId, trackid, trackrank) VALUES(1, '02894e56-08d1-4c1f-b3e4-466c069d15ed', 1);
+INSERT INTO playliststracks(playlistId, trackid, trackrank) VALUES(1, '13894e56-08d1-4c1f-b3e4-466c069d15ed', 2);
+
+-------------------------------------------------------- tracksGenres --------------------------------------------------
+INSERT INTO tracksgenres(genreid, trackid, weight) VALUES(1, '13894e56-08d1-4c1f-b3e4-466c069d15ed', 1);
+
+-------------------------------------------------------- tracksFollowed ------------------------------------------------
+INSERT INTO tracksfollowed(userId, trackId)
+VALUES('077f3ea6-2272-4457-a47e-9e9111108e44', '02894e56-08d1-4c1f-b3e4-466c069d15ed');
+
+-------------------------------------------------------- tracksRemoved -------------------------------------------------
+INSERT INTO tracksrating(userId, trackId, reason)
+VALUES('077f3ea6-2272-4457-a47e-9e9111108e44', '13894e56-08d1-4c1f-b3e4-466c069d15ed', 'a');
+
+-------------------------------------------------------- issuesComments ------------------------------------------------
+INSERT INTO issuescomments(commentId, content, userid, issueid)
+VALUES(100, 'content', '077f3ea6-2272-4457-a47e-9e9111108e44', 100);
+
+[[33mwarn[0m] p.a.d.e.ApplicationEvolutions - Run with -Dplay.evolutions.db.tests.autoApply=true if you want to run them automatically (be careful)
+Oops, cannot start the server.
+@6oamhbc6e: Database 'tests' needs evolution!
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:74)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+	at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.Stream.foreach(Stream.scala:594)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:96)
+	at com.google.inject.Guice.createInjector(Guice.java:73)
+	at com.google.inject.Guice.createInjector(Guice.java:62)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.ProdServerStart$.start(ProdServerStart.scala:52)
+	at play.core.server.ProdServerStart$.main(ProdServerStart.scala:27)
+	at play.core.server.ProdServerStart.main(ProdServerStart.scala)
+SSH: EXEC: completed after 5,602 ms
+SSH: Disconnecting configuration [claudeRemote] ...
+ERROR: Exception when publishing, exception message [Exec exit status not zero. Status [255]]
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0m[INFO] HipChat notification sent to the following rooms: 1512094
+[WS-CLEANUP] Deleting project workspace...[WS-CLEANUP] done
+Finished: UNSTABLE

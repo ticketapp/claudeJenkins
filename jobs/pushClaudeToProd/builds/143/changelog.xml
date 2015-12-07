@@ -1,0 +1,13 @@
+commit 31ae7f241c41fa59f5e6033c75edba162d0e67db
+tree 2473783770d6d2f7e5fb6b964408bb3ec74809b0
+parent ba0f72e48280afd51280f1cfd0d49a05aeea2c2a
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 23:47:23 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 23:47:23 +0100
+
+    Revert h1 and fix bug trackDomain
+
+
+
+:100755 100755 c07f5b89efc7b9548fec12ddd09dc52a5a10c863 97ea371bde9c427a734f786bb8bf00f76fb7a0cc M	app/artistsDomain/Artist.scala
+:100755 100755 98a1cb9e4f2851af0227853a7e754cb0c22d3654 716ad67151e121c5cd3b9faa64e57323c5ed5394 M	app/artistsDomain/ArtistController.scala
+:100755 100755 5b44852621675af4079164d00f14f4cae8f151d2 bd9c12c2a3b0704559b6ce38f764ffd97de4da48 M	app/views/index.scala.html

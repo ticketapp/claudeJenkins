@@ -1,0 +1,35 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/claudePullRequestBuild/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ticketapp/master.git # timeout=10
+Fetching upstream changes from https://github.com/ticketapp/master.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username ticketapp # timeout=10
+ > git config --local credential.helper store --file=/tmp/git1829118820361924670.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ticketapp/master.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision 5b1813739720fd45f2aa2004efeef30e49b88e68 (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5b1813739720fd45f2aa2004efeef30e49b88e68
+ > git rev-list 4265dc8676b2f89fa6692ef7d294b3fd0b26b11a # timeout=10
+[INFO] HipChat notification sent to the following rooms: 1512094
+[workspace] $ java -Dsbt.log.noformat=true -jar /var/jenkins_home/tools/org.jvnet.hudson.plugins.SbtPluginBuilder_SbtInstallation/sbt/bin/sbt-launch.jar test
+[info] Loading project definition from /var/jenkins_home/jobs/claudePullRequestBuild/workspace/project
+[info] Set current project to Claude (in build file:/var/jenkins_home/jobs/claudePullRequestBuild/workspace/)
+[info] Compiling 2 Scala sources to /var/jenkins_home/jobs/claudePullRequestBuild/workspace/target/scala-2.11/test-classes...
+[error] /var/jenkins_home/jobs/claudePullRequestBuild/workspace/test/testsHelper/Injectors.scala:27: type mismatch;
+[error]  found   : String
+[error]  required: (String, Any)
+[error]         "slick.dbs.default.db.url" -> "jdbc:postgresql://localhost" +
+[error]                                                                     ^
+[error] one error found
+[error] (test:compileIncremental) Compilation failed
+[error] Total time: 3 s, completed Dec 3, 2015 12:43:38 AM
+Build step 'Build using sbt' changed build result to FAILURE
+Build step 'Build using sbt' marked build as failure
+[INFO] HipChat notification sent to the following rooms: 1512094
+[WS-CLEANUP] Deleting project workspace...[WS-CLEANUP] done
+Finished: FAILURE

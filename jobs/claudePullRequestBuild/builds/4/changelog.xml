@@ -1,0 +1,13 @@
+commit 5b1813739720fd45f2aa2004efeef30e49b88e68
+tree 2ee4058684abf57f87a8e320dcf748101063736e
+parent 4265dc8676b2f89fa6692ef7d294b3fd0b26b11a
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:42:59 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:42:59 +0100
+
+    Change database configuration to run tests from jenkins docker image
+
+
+
+:100755 100755 b0d5cfbd4a32a63643e99c695751d92d9af4aec4 7a4cef61b7ccc7418134800fbd2e17019459b131 M	conf/application.conf
+:100755 100755 354c2215001e26290b785029bd365fb20318d15b 93fe1d0d75d4a1b29ec23111a09f82ce46218d22 M	test/TestSearchTracksController.scala
+:100644 100644 75c3bd8127e7b85eca0c7395af5ba9b183ed2d3c 32d5605d1a396e393b5683186f8f92b44ec6cd57 M	test/testsHelper/Injectors.scala

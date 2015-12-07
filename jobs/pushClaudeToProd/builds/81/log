@@ -1,0 +1,535 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/claude_dev/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ticketapp/master.git # timeout=10
+Fetching upstream changes from https://github.com/ticketapp/master.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username ticketapp # timeout=10
+ > git config --local credential.helper store --file=/tmp/git5664120700116563963.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ticketapp/master.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision 42d8b724d92d29598094be9a3c5235e8fa2d517d (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 42d8b724d92d29598094be9a3c5235e8fa2d517d
+ > git rev-list f67169be33fc2153fab317941f0bd83ec3ebce82 # timeout=10
+[workspace] $ java -Dsbt.log.noformat=true -jar /var/jenkins_home/tools/org.jvnet.hudson.plugins.SbtPluginBuilder_SbtInstallation/sbt/bin/sbt-launch.jar test
+[info] Loading project definition from /var/jenkins_home/jobs/claude_dev/workspace/project
+[info] Set current project to Claude (in build file:/var/jenkins_home/jobs/claude_dev/workspace/)
+[info] Compiling 1 Scala source to /var/jenkins_home/jobs/claude_dev/workspace/target/scala-2.11/test-classes...
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+stringUUIDsFromDB = Vector(4a695d36-b43b-4a10-a69b-504339f5fd25, 7fcb60b1-2af0-43f3-badb-b869d41803f3, 76f15d20-8049-492f-8908-ad839df7003b, 2a8522ed-a079-4c68-aadd-d4a7ae917cc8, 806e0729-147e-4e3b-9b5f-09d81b9d6c92, 8289c1d3-1c3f-4079-9020-4c6e5958fd9a, 729c1a7e-ab05-4742-a097-95ec5a5a0210)
+[info] TestArtistController
+[info] 
+[info] artist controller should
+[[37minfo[0m] application - Artist.save: this artist is already saved
+[info]   + create an artist and return tracks found in enumerator
+[info]   + not create an artist twice and return an error
+[info]   + find all artists since offset
+[info]   + find all artists containing worakls
+[[37minfo[0m] application - 077f3ea6-2272-4457-a47e-9e9111108e44
+[[37minfo[0m] application - 077f3ea6-2272-4457-a47e-9e9111108e44
+[[37minfo[0m] application - 077f3ea6-2272-4457-a47e-9e9111108e44
+[[31merror[0m] application - ArtistController.followArtistByArtistId: user with id 077f3ea6-2272-4457-a47e-9e9111108e44 already follows artist with id 3
+[info]   + find one artist by id
+[info]   + find one artist by facebookUrl
+[info]   + follow and unfollow an artist by id
+[info]   + return an error if an user try to follow an artist twice
+[info]   + follow and unfollow an artist by facebookId
+[info]   + find followed artists
+[info]   + find one followed artist by id
+[info]   + find artist by facebook containing
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find events by artistFacebookUrl
+[info]   + find passed events by artistId
+[info]   + find artists by genre
+[info] 
+[info] Total for specification TestArtistController
+[info] Finished in 3 seconds, 308 ms
+[info] 17 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestPlaceController
+[info] 
+[info] Place controller should
+[info]   + create a place with an address
+[info]   + find a list of places
+[info]   + find a list of place by containing
+[info]   + find one place by id
+[[31merror[0m] application - PlaceController.followPlaceByPlaceId: 400 is already followed
+[info]   + follow and unfollow a place by id
+[info]   + return an error if a user try to follow a place twice
+[info]   + follow by facebookId
+[info]   + find followed places
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + return true if isFollowed else false
+[info]   + get places near geoPoint
+[info] 
+[info] Total for specification TestPlaceController
+[info] Finished in 2 seconds, 197 ms
+[info] 12 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[[37minfo[0m] application - connectedUser(077f3ea6-2272-4457-a47e-9e9111108e44,LoginInfo(facebook,user@facebook.com),None,None,None,None,None)
+[info] TestApplicationController
+[info] 
+[info] Application controller should
+[[37minfo[0m] application - not connected
+[[36mdebug[0m] a.Application - [Silhouette] Unauthenticated user trying to access '/signOut'
+[info]   + return true if a user get the index page being connected
+[info]   + return false if a user get the index page being not connected
+[info]   + sign out a user being connected
+[info]   + return a status unauthorized when a user not connected tries to sign out
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] 
+[info] Total for specification TestApplicationController
+[info] Finished in 2 seconds, 93 ms
+[info] 6 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[[31merror[0m] application - Address.formApply: empty address has not been created
+[info] TestOrganizerController
+[info] 
+[info] organizer controller should
+[info]   + create an organizer
+[info]   + find a list of organizers
+[info]   + find one organizer by id
+[info]   + find a list of organizer containing
+[[31merror[0m] application - OrganizerController.followOrganizerByOrganizerId: 1 is already followed
+[info]   + follow and unfollow an organizer by id
+[info]   + return an error if an user try to follow an organizer twice
+[info]   + follow an organizer by facebookId
+[info]   + find followed organizers
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + return true if the organizer is followed else false
+[info]   + get organizers near geoPoint
+[info] 
+[info] Total for specification TestOrganizerController
+[info] Finished in 2 seconds, 114 ms
+[info] 12 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestUserController
+[info] 
+[info] user controller should
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find the geographicPoint for the user
+[info]   + get removed tracks for an user
+[info] 
+[info] Total for specification TestUserController
+[info] Finished in 2 seconds, 116 ms
+[info] 4 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestIssueController
+[info] 
+[info] Issue controller should
+[info]   + find all issues
+[info]   + find all comments
+[info]   + create an issue
+[info]   + create a comment
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] 
+[info] Total for specification TestIssueController
+[info] Finished in 2 seconds, 70 ms
+[info] 6 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestPlaylistController
+[info] 
+[info] playlist controller should
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + create and delete a playlist
+[info]   + find playlists by user
+[info]   + update a playlist
+[info] 
+[info] Total for specification TestPlaylistController
+[info] Finished in 2 seconds, 51 ms
+[info] 5 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestTrackController
+[info] 
+[info] track controller should
+[[31merror[0m] application - TrackController.followTrackByTrackId: 02894e56-08d1-4c1f-b3e4-466c069d15ed is already followed
+[info]   + create a track
+[info]   + find a list of tracks by artist
+[info]   + follow and unfollow a track by id
+[info]   + return an error if an user try to follow a track already followed
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find followed tracks
+[info]   + return true if the track is followed
+[info]   + find tracks by facebookUrl
+[info] 
+[info] Total for specification TestTrackController
+[info] Finished in 2 seconds, 101 ms
+[info] 9 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestEventController
+[info] 
+[info] Event controller should
+[info]   + create an event
+[info]   + find a list of events
+[info]   + find a list of event by containing
+[info]   + find one event by id
+[[31merror[0m] application - EventController.followEventByEventId: 6 is already followed
+[info]   + follow and unfollow an event by id
+[info]   + return an error if an user try to follow an event twice
+[info]   + find followed events
+[[31merror[0m] application - Track.saveSequence:
+BatchUpdateException:org.postgresql.util.PSQLException: ERROR: insert or update on table "tracks" violates foreign key constraint "tracks_artistfacebookurl_fkey"
+  Detail: Key (artistfacebookurl)=(lamicrofaune) is not present in table "artists".
+[info]   + return true if an event is followed else false
+[info]   + create an event by facebookId
+[info]   + find events in interval
+[info]   + find passed events in interval
+[info]   + find events by placeId
+[info]   + find passed events by placeId
+[info]   + find events by organizerId
+[info]   + find passed events by organizerId
+[info]   + get events near geoPoint
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] 
+[info] Total for specification TestEventController
+[info] Finished in 2 seconds, 172 ms
+[info] 18 examples, 0 failure, 0 error
+[info] 
+[info] TestFollowService:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Artist
+[info] - must be followed and unfollowed by a user
+[info] - must not be followed twice
+[info] - must be follow by facebookId
+[info] - must be returned if is followed
+[info] An Event
+[info] - must be followed and unfollowed by a user
+[info] - must not be followed twice
+[info] - must be returned if is followed
+[info] An organizer
+[info] - must be followed and unfollowed by a user
+[info] - must be followed by facebookId
+[info] - must not be followed twice
+[info] An place
+[info] - must be followed and unfollowed by a user
+[info] - must be followed by facebookId
+[info] - must not be followed twice
+[info] - must be returned if is followed
+[info] A track
+[info] - must be followed and unfollowed by a user
+[info] - must be returned if is followed
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestUserModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A user
+[info] - must be saved and deleted
+[info] - must get his followed places
+[info] - must get his followed organizers
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestUtilities:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A utilities
+[info] - must normalize string with the method normalizeString
+[info] - normalize urls
+[info] - normalize maybe url
+[info] - refactor events or places names
+[info] - return an optional string from a set
+[info] - convert a string to a datetime
+[info] - return a list of normalized websites from a text
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestSearchArtist:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchArtist
+[info] - must find a sequence of artists on Facebook
+[info] - must find Rone (an artist) on Facebook
+[info] - must normalize Facebook urls
+[info] - must remove useless words in a SoundCloudUrl (even if it contains uppercase letters)
+[info] - must remove nothing in a non-soundCloud website
+[info] - must aggregate the image path url with its offsets
+[info] - must find facebook artists from a set of website
+[info] - must find artists in event's title
+[info] - must find artists for an event
+[info] - must find facebook artists for a string
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestOrganizerModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Organizer
+[info] - must be saved and deleted in database
+[info] - must find organizers
+[info] - must find organizer by facebookId
+[info] - must find organizers near geoPoint
+[info] - must be found near city
+[info] - must not be saved twice and return the organizerId
+[info] - must be linked to a place if one with the same facebookId already exists
+[info] - must save organizer with event relation
+[info] - must get the info about the organizer on Facebook
+[info] - must save and find an organizer with his address
+[info] - must find organizers containing
+[info] - must save events relations
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGeographicPointMethods:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A geographicPoint
+[info] - must get a geographicPoint
+[info] - must get a geographicPoint for a city
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestIssueModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An issue
+[info] - must all be found
+[info] - must found all its comments
+[info] - must save an issue
+[info] - must save a comment
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGenreModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A genre
+[info] - must be saved and deleted
+[info] - must be saved in lowerCase
+[info] - must find a genre by containing
+[info] - must not be created if empty
+[info] - must return the already existing genre when there was a unique violation
+[info] - must save and delete its relation with a track
+[info] - must find all genres for a track
+[info] - must save its relation with an event
+[info] - must find a sequence of genres by names
+[info] - must save, update and delete its relation with an artist
+[info] - must find over genres in genre set
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestMyDBTableDefinition:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] MDBT
+[info] - must take an option of string separated with comma and return to set
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestSearchSoundCloudTracks:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchSoundCloudTracks
+[info] - must find tracks on SoundCloud
+[info] - must get SoundCLoud tracks without SoundCloud website for Worakls
+[info] - must return SoundCLoud accounts with the best confidence
+[info] - must not return SoundCloud accounts id the best confidence is 0
+[info] - must find soundCloud ids for artist name worakls
+[info] - must find soundCloud websites for a list of soundCloud ids
+[info] - must compute the confidence of an souncloud with websites
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestArtistModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Artist
+[info] - must be saved in database and return the new artist
+[info] - must be deleted in database
+[info] - must be found in database
+[[37minfo[0m] application - Artist.save: this artist is already saved
+[info] - must return None when trying to save an already existent artist
+[info] - must all be found
+[info] - must save its relation with an event
+[info] - must save its relation with an event, be found by this event and delete this relation
+[info] - must be updated
+[info] - must have his websites updated
+[info] - must have his websites updated without duplicates
+[info] - must have another website
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 26
+[[31merror[0m] application - Artist.addWebsitesFoundOnSoundCloud: not exactly one row was updated by addWebsite for artist Artist(Some(26),Some(facebookIdTestArtistModel),artistTest,Some(imagePath),Some(description),facebookUrl,Set(website),false,None,None)for website hungrymusic.fr
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 26
+[[31merror[0m] application - Artist.addWebsitesFoundOnSoundCloud: not exactly one row was updated by addWebsite for artist Artist(Some(26),Some(facebookIdTestArtistModel),artistTest,Some(imagePath),Some(description),facebookUrl,Set(website),false,None,None)for website youtube.com/user/worakls/videos
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 26
+[[31merror[0m] application - Artist.addWebsitesFoundOnSoundCloud: not exactly one row was updated by addWebsite for artist Artist(Some(26),Some(facebookIdTestArtistModel),artistTest,Some(imagePath),Some(description),facebookUrl,Set(website),false,None,None)for website twitter.com/worakls
+[info] - must save soundcloud websites for an artist
+[info] - must find an artist id by facebookId
+[info] - must find an artist id by facebookUrl
+[info] - must find an artist by facebookUrl
+[info] - must read a facebook artist in Json
+[info] - must read a set of facebook artist in Json
+[info] - must return hasTracks set to true if he as some tracks and vice-versa
+[info] - must find all containing pattern
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestAddressModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An address
+[info] - must not be created if empty
+[info] - must be saved (in lowercase) in database and return the new id then be deleted
+[info] - must not be saved twice with same city, zip, street and return database addressId on unique violation
+[info] - must update address
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGenresStringToSet:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A sequence of genres as a string
+[info] - must return an empty set for an empty string
+[info] - must return a unique low case genre for a single word without punctuation
+[info] - must return genres split by comas in the string given
+[info] - must return genres split by spaces in the string given
+[info] - must return hip-hop
+[info] - must return the genres without music or synonyms
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestTrackModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A track
+[info] - must be found by playlist id
+[info] - must be saved and deleted
+[[37minfo[0m] application - Track already in database: Track(c74611b3-8437-496c-91e3-0cda73d1a3ed,title2,url,s,thumbnailUrl,facebookUrl0,artistName,None,0.0)
+[info] - must not be saved twice for same title and artistName
+[info] - must be found by pattern
+[info] - must be found by genre
+[info] - must be rated up or down by a user
+[info] - must update rating up&down and confidence
+[info] - must get ratings up and down
+[info] - must calculate confidence with rating up and down
+[info] - must have his confidence updated
+[info] - must find all tracks sorted by confidence for an artist
+[info] - must find n (numberToReturn) tracks for an artist
+[info] - must remove duplicate with same title and artist name without taking account of accentuated letters
+[info] - must set artist.hasTrack on save track
+[info] - must set artist.hasTrack when saving a set of tracks
+[info] - must return true if artist name is in the title and vice-versa without taking account of accentuated letters
+[info] - must remove duplicates in enumerator
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestNormalizeArtistName:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A sequence of artists names (strings)
+[info] - must return artists name lowercase
+[info] - must return artists name trimmed without multiple spaces and tabs
+[info] - must return artists name without fanpage, official, officiel, fb, facebook, page
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestEventModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An event
+[info] - must be saved and deleted in database
+[info] - must be saved with relations and deleted in database
+[info] - must find all events by genre
+[info] - must find all events by place
+[info] - must find all events by place sorted by date
+[info] - must return passed events for a place
+[info] - must return events linked to an artist
+[info] - must return passed events for an artist
+[info] - must return events linked to an organizer
+[info] - must return passed events for an organizer
+[info] - must return events facebook id for a place facebook id
+[info] - must find a complete event by facebookId
+[info] - must find nearest events
+[info] - must have the genre of its artists
+[info] - must find events in period near
+[info] - must find passed events in period near
+[info] - must find all containing pattern near a geoPoint
+[info] - must find all by city pattern
+[info] - must be found near city
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestSearchTracksController:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchTracksController
+[info] - must find tracks on Youtube by a title and an artist
+[[31merror[0m] application - Track.saveSequence:
+BatchUpdateException:org.postgresql.util.PSQLException: ERROR: insert or update on table "tracks" violates foreign key constraint "tracks_artistfacebookurl_fkey"
+  Detail: Key (artistfacebookurl)=(facebookUrlSearchTracksController) is not present in table "artists".
+[info] - must get youtube track info
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestPlaylistModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A playlist
+[info] - must be able to be saved and deleted
+[info] - must find playlists by userUUID
+[info] - must be updated
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGetUserLikedPagesOnFacebook:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] GetUserLikedPagesOnFacebook service
+[info] - must transform a facebook page to a sequence of PageIdAndCategory
+[[31merror[0m] application - Artist.addSoundCloudUrlIfMissing: 
+org.postgresql.util.PSQLException: FATAL: sorry, too many clients already
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:420) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:195) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:127) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:29) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:21) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:41) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:414) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.connect(Driver.java:282) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+[[31merror[0m] application - Track.saveSequence:
+Message:
+org.postgresql.util.PSQLException: FATAL: sorry, too many clients already
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:420) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:195) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:127) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:29) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:21) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:41) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:414) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.connect(Driver.java:282) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+[[31merror[0m] application - Artist.addSoundCloudUrlIfMissing: 
+org.postgresql.util.PSQLException: FATAL: sorry, too many clients already
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:420) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:195) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:66) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:127) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:29) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:21) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:41) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:24) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:414) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+	at org.postgresql.Driver.connect(Driver.java:282) ~[postgresql-9.4-1201-jdbc41.jar:9.4]
+[[37minfo[0m] application - GetUserLikedPagesOnFacebook.makeArtistUserRelations: done
+[info] - must save artists from facebook and make the relation with an user
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestFormatDescription:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] Format a description
+[info] - must should format links
+[info] - must should not format mail addresses as a link
+[info] - must should not format phone numbers as a link
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestSearchYoutubeTracks:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchYoutubeTracks
+[info] - must return a list of echonestId/facebookId
+[info] - must return an artist name
+[info] - must return echonestId
+[info] - must return some tracks
+[info] - must return a Set[String] Enumerator of Youtube tracks title
+[info] - must return a set of tracks for a title
+[info] - must return a set of tracks for a set of titles
+[info] - must return an enumerator of tracks
+[info] - must return a set of the Youtube channel Ids
+[info] - must return the names of the Youtube user
+[info] - must return some tracks for a Youtube User
+[info] - must return ids of user youtube
+[info] - must return a set of youtube tracks
+[info] - must return set of youtube tracks by websites with channel id
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestPlaceModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A place
+[info] - must be saved and deleted in database and return the new id
+[info] - must all be found, sorted by distance
+[info] - must be saved with its address and deleted in database
+[info] - must be linked to an organizer if one with the same facebookId already exists
+[info] - must save and delete its relation with an event
+[info] - must get a new place by facebookId when saving new event by facebookId
+[info] - must find id by facebookId
+[info] - must find place on facebook
+[info] - must be found near city
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestTariffModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] Tariff
+[info] - must find prices
+[info] - must find ticket seller
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestActors:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Echo actor
+[info] - must send back messages unchanged
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] ScalaTest
+[info] Run completed in 2 minutes, 37 seconds.
+[info] Total number of tests run: 177
+[info] Suites: completed 24, aborted 0
+[info] Tests: succeeded 177, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[info] Passed: Total 248, Failed 0, Errors 0, Passed 248
+[success] Total time: 163 s, completed Dec 1, 2015 9:46:47 PM
+Build step 'Build using sbt' changed build result to SUCCESS
+Finished: SUCCESS

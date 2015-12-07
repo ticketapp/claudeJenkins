@@ -1,0 +1,11 @@
+commit 65395166ef33f86c775985e4ea687c8b65956cb1
+tree f26710466229f05bbaf4cfbbc1843b1fd696f788
+parent 8086d5a38de31a4d24f4ff341064fbdb479a0f4d
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 20:31:19 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-02 20:31:19 +0100
+
+    WIP2 Tests database configuration
+
+
+
+:100755 100755 f5fb7b194b01ccf34d83ac4d654c08b95f2972ce a9cb743d37c653b839191938d07ef0a7a4738ca0 M	conf/application.conf

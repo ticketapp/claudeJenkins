@@ -1,0 +1,12 @@
+commit 28e83990d1bc5ac12bf7b1419c1aef0180fbe20d
+tree 4d6ef80014e99b5386ac65cd0f8d1683cc4dc056
+parent 6571fd058d3bf8b91623796aeefb9702f3908a69
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 02:07:33 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 02:07:33 +0100
+
+    Comment some tests un utilities about bit.ly in order to avoid random
+    test errors
+
+
+
+:100755 100755 22c405d264cbbf7bd226034bd4b568ccf9f69e7d 81498e467a06e8abc74b554ca310caaa0e68c103 M	test/TestUtilities.scala

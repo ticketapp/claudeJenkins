@@ -1,0 +1,21 @@
+<l:dependencies xmlns:l='licenses'>
+  <l:dependency name='Jenkins HipChat Plugin' groupId='org.jvnet.hudson.plugins' artifactId='hipchat' version='0.2.0' url='http://wiki.jenkins-ci.org/display/JENKINS/HipChat+Plugin'>
+    <l:description>A Build status publisher that notifies channels on a HipChat server</l:description>
+    <l:license name='MIT license' />
+  </l:dependency>
+  <l:dependency name='Apache HttpCore' groupId='org.apache.httpcomponents' artifactId='httpcore' version='4.4.1' url='http://hc.apache.org/httpcomponents-core-ga'>
+    <l:description>Apache HttpComponents Core (blocking I/O)</l:description>
+    <l:license name='Apache License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
+  </l:dependency>
+  <l:dependency name='Apache Commons Codec' groupId='commons-codec' artifactId='commons-codec' version='1.9' url='http://commons.apache.org/proper/commons-codec/'>
+    <l:description>The Apache Commons Codec package contains simple encoder and decoders for
+     various formats such as Base64 and Hexadecimal.  In addition to these
+     widely used encoders and decoders, the codec package also maintains a
+     collection of phonetic encoding utilities.</l:description>
+    <l:license name='The Apache Software License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
+  </l:dependency>
+  <l:dependency name='Apache HttpClient' groupId='org.apache.httpcomponents' artifactId='httpclient' version='4.5' url='http://hc.apache.org/httpcomponents-client'>
+    <l:description>Apache HttpComponents Client</l:description>
+    <l:license name='Apache License, Version 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
+  </l:dependency>
+</l:dependencies>

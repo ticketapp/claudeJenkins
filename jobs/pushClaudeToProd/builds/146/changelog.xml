@@ -1,0 +1,13 @@
+commit 7eb65c67b210e637a7325c2ed1a16714c8c51b79
+tree e711e2fa038b2aa770849b080d25b1ae8c10c7fc
+parent 31ae7f241c41fa59f5e6033c75edba162d0e67db
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:11:38 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-03 01:11:38 +0100
+
+    WIP test database config JENKINS
+
+
+
+:100755 100755 a9cb743d37c653b839191938d07ef0a7a4738ca0 b0d5cfbd4a32a63643e99c695751d92d9af4aec4 M	conf/application.conf
+:100644 100644 ecce8311a9119e8bd4be6fc1808343370ace008f e1a357062c005757e4a9102ebf58e31cef7c1d21 M	test/testsHelper/Context.scala
+:100644 100644 56fd35d4d035625d4d129138c2160ecc76cebe4c 75c3bd8127e7b85eca0c7395af5ba9b183ed2d3c M	test/testsHelper/Injectors.scala

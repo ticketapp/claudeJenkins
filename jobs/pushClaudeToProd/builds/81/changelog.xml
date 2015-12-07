@@ -1,0 +1,11 @@
+commit 42d8b724d92d29598094be9a3c5235e8fa2d517d
+tree 9598c79c7a9a34e2b30c2ebbaed3c3b0164ec3d9
+parent f67169be33fc2153fab317941f0bd83ec3ebce82
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-01 22:43:16 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-01 22:43:16 +0100
+
+    Correct a test
+
+
+
+:100755 100755 10160873358c7703b883f8fdc7d583a218fbc766 401ed27d27511851c074c55ca2218b5acadb4b17 M	test/TestSearchArtist.scala
