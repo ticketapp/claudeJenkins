@@ -1,0 +1,2073 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/pushClaudeToProd/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ticketapp/master.git # timeout=10
+Fetching upstream changes from https://github.com/ticketapp/master.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username ticketapp # timeout=10
+ > git config --local credential.helper store --file=/tmp/git4792193437978592194.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ticketapp/master.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision f065237fcb4bdabbdae83c669c891d786144c4fe (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f065237fcb4bdabbdae83c669c891d786144c4fe
+ > git rev-list f7055476f159537f930e7ea26a3c6070c6baa9e8 # timeout=10
+[INFO] HipChat notification sent to the following rooms: 1512094
+[workspace] $ java -Dsbt.log.noformat=true -jar /var/jenkins_home/tools/org.jvnet.hudson.plugins.SbtPluginBuilder_SbtInstallation/sbt/bin/sbt-launch.jar test dist
+[info] Loading project definition from /var/jenkins_home/jobs/pushClaudeToProd/workspace/project
+[info] Set current project to Claude (in build file:/var/jenkins_home/jobs/pushClaudeToProd/workspace/)
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestEventController
+[info] 
+[info] Event controller should
+[info]   + create an event
+[info]   + find a list of events
+[info]   + find a list of event by containing
+[info]   + find one event by id
+[[31merror[0m] application - EventController.followEventByEventId: 72 is already followed
+[info]   + follow and unfollow an event by id
+[info]   + return an error if an user try to follow an event twice
+[info]   + find followed events
+[error]   x return true if an event is followed else false
+[error]    'false' is not equal to 'true' (TestEventController.scala:126)
+[info] 
+[info]   + create an event by facebookId
+[info]   + find events in interval
+[info]   + find passed events in interval
+[info]   + find events by placeId
+[info]   + find passed events by placeId
+[info]   + find events by organizerId
+[info]   + find passed events by organizerId
+[info]   + get events near geoPoint
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.evolve(EvolutionsApi.scala:226)
+[error] play.api.db.evolutions.Evolutions$.cleanupEvolutions(Evolutions.scala:207)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestEventController.afterAll(TestEventController.scala:18)
+[info] 
+[info] Total for specification TestEventController
+[info] Finished in 2 seconds, 672 ms
+[info] 18 examples, 1 failure, 1 error
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] application - Track.saveSequence:
+BatchUpdateException:org.postgresql.util.PSQLException: ERROR: insert or update on table "tracks" violates foreign key constraint "tracks_artistfacebookurl_fkey"
+  Detail: Key (artistfacebookurl)=(facebookUrlSearchTracksController) is not present in table "artists".
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestSearchTracksController.application$lzycompute(TestSearchTracksController.scala:7)
+[error] TestSearchTracksController.application(TestSearchTracksController.scala:7)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestSearchTracksController.beforeAll(TestSearchTracksController.scala:7)
+[info] TestSearchTracksController
+[info] 
+[info] SearchTracksController should
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info]   + find tracks on Youtube by a title and an artist
+[info]   + get youtube track info
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestSearchTracksController.injector$lzycompute(TestSearchTracksController.scala:7)
+[error] TestSearchTracksController.injector(TestSearchTracksController.scala:7)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestSearchTracksController.databaseApi$lzycompute(TestSearchTracksController.scala:7)
+[error] TestSearchTracksController.databaseApi(TestSearchTracksController.scala:7)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestSearchTracksController.afterAll(TestSearchTracksController.scala:7)
+[info] 
+[info] Total for specification TestSearchTracksController
+[info] Finished in 542 ms
+[info] 4 examples, 0 failure, 2 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestPlaceController.application$lzycompute(TestPlaceController.scala:14)
+[error] TestPlaceController.application(TestPlaceController.scala:14)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestPlaceController.beforeAll(TestPlaceController.scala:14)
+[info] TestPlaceController
+[info] 
+[info] Place controller should
+[[31merror[0m] application - PlaceController.followPlaceByPlaceId: there is no place with the id 1
+[info]   + create a place with an address
+[info]   + find a list of places
+[[31merror[0m] application - PlaceController.unfollowPlace: placeMethods.unfollow did not return 1
+[info]   + find a list of places containing
+[info]   + find one place by id
+[error]   x follow and unfollow a place by id
+[error]    '404' is not equal to '201' (TestPlaceController.scala:64)
+[info] 
+[error]   x return an error if a user try to follow a place twice
+[error]    '201' is not equal to '409' (TestPlaceController.scala:73)
+[info] 
+[info]   + follow by facebookId
+[info]   + find followed places
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info]   + return true if isFollowed else false
+[error]   ! get places near geoPoint
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestPlaceController.injector$lzycompute(TestPlaceController.scala:14)
+[error] TestPlaceController.injector(TestPlaceController.scala:14)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestPlaceController.dbConfProvider$lzycompute(TestPlaceController.scala:14)
+[error] TestPlaceController.dbConfProvider(TestPlaceController.scala:14)
+[error] testsHelper.Injectors$class.geographicPointMethods(Injectors.scala:43)
+[error] TestPlaceController.geographicPointMethods$lzycompute(TestPlaceController.scala:14)
+[error] TestPlaceController.geographicPointMethods(TestPlaceController.scala:14)
+[error] TestPlaceController$$anonfun$1$$anonfun$apply$34.apply(TestPlaceController.scala:115)
+[error] TestPlaceController$$anonfun$1$$anonfun$apply$34.apply(TestPlaceController.scala:102)
+[info] 
+[info]   + return places 12 by 12 (and never the same with the same geographicPoint)
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestPlaceController.injector$lzycompute(TestPlaceController.scala:14)
+[error] TestPlaceController.injector(TestPlaceController.scala:14)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestPlaceController.databaseApi$lzycompute(TestPlaceController.scala:14)
+[error] TestPlaceController.databaseApi(TestPlaceController.scala:14)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestPlaceController.afterAll(TestPlaceController.scala:14)
+[info] 
+[info] Total for specification TestPlaceController
+[info] Finished in 214 ms
+[info] 13 examples, 2 failures, 3 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestUserController.application$lzycompute(TestUserController.scala:10)
+[error] TestUserController.application(TestUserController.scala:10)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestUserController.beforeAll(TestUserController.scala:10)
+[info] TestUserController
+[info] 
+[info] user controller should
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info]   + find the geographicPoint for the user
+[error]   x get removed tracks for an user
+[error]    '[]' doesn't contain '13894e56-08d1-4c1f-b3e4-466c069d15ed' (TestUserController.scala:28)
+[info] 
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestUserController.injector$lzycompute(TestUserController.scala:10)
+[error] TestUserController.injector(TestUserController.scala:10)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestUserController.databaseApi$lzycompute(TestUserController.scala:10)
+[error] TestUserController.databaseApi(TestUserController.scala:10)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestUserController.afterAll(TestUserController.scala:10)
+[info] 
+[info] Total for specification TestUserController
+[info] Finished in 79 ms
+[info] 4 examples, 1 failure, 2 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestPlaylistController.application$lzycompute(TestPlaylistController.scala:11)
+[error] TestPlaylistController.application(TestPlaylistController.scala:11)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestPlaylistController.beforeAll(TestPlaylistController.scala:11)
+[info] TestPlaylistController
+[info] 
+[info] playlist controller should
+[error]   ! create and delete a playlist
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestPlaylistController.injector$lzycompute(TestPlaylistController.scala:11)
+[error] TestPlaylistController.injector(TestPlaylistController.scala:11)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestPlaylistController.dbConfProvider$lzycompute(TestPlaylistController.scala:11)
+[error] TestPlaylistController.dbConfProvider(TestPlaylistController.scala:11)
+[error] testsHelper.Injectors$class.trackMethods(Injectors.scala:39)
+[error] TestPlaylistController.trackMethods$lzycompute(TestPlaylistController.scala:11)
+[error] TestPlaylistController.trackMethods(TestPlaylistController.scala:11)
+[error] TestPlaylistController$$anonfun$1$$anonfun$apply$9.apply(TestPlaylistController.scala:27)
+[error] TestPlaylistController$$anonfun$1$$anonfun$apply$9.apply(TestPlaylistController.scala:16)
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] 
+[info]   + find playlists by user
+[info]   + update a playlist
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestPlaylistController.injector$lzycompute(TestPlaylistController.scala:11)
+[error] TestPlaylistController.injector(TestPlaylistController.scala:11)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestPlaylistController.databaseApi$lzycompute(TestPlaylistController.scala:11)
+[error] TestPlaylistController.databaseApi(TestPlaylistController.scala:11)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestPlaylistController.afterAll(TestPlaylistController.scala:11)
+[info] 
+[info] Total for specification TestPlaylistController
+[info] Finished in 81 ms
+[info] 5 examples, 0 failure, 3 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestIssueController.application$lzycompute(TestIssueController.scala:12)
+[error] TestIssueController.application(TestIssueController.scala:12)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestIssueController.beforeAll(TestIssueController.scala:12)
+[info] TestIssueController
+[info] 
+[info] Issue controller should
+[info]   + find all issues
+[error]   x find all comments
+[error]    List()
+[error]    
+[error]     is not equal to 
+[error]    
+[error]    List(IssueComment(content,077f3ea6-2272-4457-a47e-9e9111108e44,100)) (TestIssueController.scala:40)
+[info] 
+[info] 
+[error] Missing (1)
+[error] IssueComment(content,077f3ea6-2272-4457-a47e-9e9111108e44,100)
+[info] 
+[info] 
+[info]   + create an issue
+[error]   x create a comment
+[error]    List()
+[error]    
+[error]     is not equal to 
+[error]    
+[error]    List(IssueComment(content,077f3ea6-2272-4457-a47e-9e9111108e44,100)) (TestIssueController.scala:74)
+[info] 
+[info] 
+[error] Missing (1)
+[error] IssueComment(content,077f3ea6-2272-4457-a47e-9e9111108e44,100)
+[info] 
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestIssueController.injector$lzycompute(TestIssueController.scala:12)
+[error] TestIssueController.injector(TestIssueController.scala:12)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestIssueController.databaseApi$lzycompute(TestIssueController.scala:12)
+[error] TestIssueController.databaseApi(TestIssueController.scala:12)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestIssueController.afterAll(TestIssueController.scala:12)
+[info] 
+[info] Total for specification TestIssueController
+[info] Finished in 47 ms
+[info] 6 examples, 2 failures, 2 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestTrackController.application$lzycompute(TestTrackController.scala:15)
+[error] TestTrackController.application(TestTrackController.scala:15)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestTrackController.beforeAll(TestTrackController.scala:15)
+[info] TestTrackController
+[info] 
+[info] track controller should
+[error]   ! create a track
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestTrackController.injector$lzycompute(TestTrackController.scala:15)
+[error] TestTrackController.injector(TestTrackController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestTrackController.dbConfProvider$lzycompute(TestTrackController.scala:15)
+[error] TestTrackController.dbConfProvider(TestTrackController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestTrackController.artistMethods$lzycompute(TestTrackController.scala:15)
+[error] TestTrackController.artistMethods(TestTrackController.scala:15)
+[error] TestTrackController$$anonfun$1$$anonfun$apply$13.apply(TestTrackController.scala:34)
+[error] TestTrackController$$anonfun$1$$anonfun$apply$13.apply(TestTrackController.scala:20)
+[info] 
+[info]   + find a list of tracks by artist
+[info]   + follow and unfollow a track by id
+[error]   x return an error if an user try to follow a track already followed
+[error]    '201' is not equal to '409' (TestTrackController.scala:67)
+[info] 
+[error]   x find followed tracks
+[error]    '[{"track":{"uuid":"02894e56-08d1-4c1f-b3e4-466c069d15ed","title":"title","url":"url0","platform":"y","thumbnailUrl":"thumbnailUrl","artistFacebookUrl":"facebookUrl0","artistName":"artistName","confidence":0},"genres":[]}]' doesn't contain '{"id":1,"name":"genretest0","icon":"a"}' (TestTrackController.scala:75)
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] 
+[info]   + return true if the track is followed
+[info]   + find tracks by facebookUrl
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestTrackController.injector$lzycompute(TestTrackController.scala:15)
+[error] TestTrackController.injector(TestTrackController.scala:15)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestTrackController.databaseApi$lzycompute(TestTrackController.scala:15)
+[error] TestTrackController.databaseApi(TestTrackController.scala:15)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestTrackController.afterAll(TestTrackController.scala:15)
+[info] 
+[info] Total for specification TestTrackController
+[info] Finished in 47 ms
+[info] 9 examples, 2 failures, 3 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[37minfo[0m] application - connectedUser(077f3ea6-2272-4457-a47e-9e9111108e44,LoginInfo(facebook,user@facebook.com),None,None,None,None,None)
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestApplicationController.application$lzycompute(TestApplicationController.scala:8)
+[error] TestApplicationController.application(TestApplicationController.scala:8)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestApplicationController.beforeAll(TestApplicationController.scala:8)
+[info] TestApplicationController
+[info] 
+[info] Application controller should
+[[37minfo[0m] application - not connected
+[[36mdebug[0m] a.Application - [Silhouette] Unauthenticated user trying to access '/signOut'
+[info]   + return true if a user get the index page being connected
+[info]   + return false if a user get the index page being not connected
+[info]   + sign out a user being connected
+[info]   + return a status unauthorized when a user not connected tries to sign out
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestApplicationController.injector$lzycompute(TestApplicationController.scala:8)
+[error] TestApplicationController.injector(TestApplicationController.scala:8)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestApplicationController.databaseApi$lzycompute(TestApplicationController.scala:8)
+[error] TestApplicationController.databaseApi(TestApplicationController.scala:8)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestApplicationController.afterAll(TestApplicationController.scala:8)
+[info] 
+[info] Total for specification TestApplicationController
+[info] Finished in 53 ms
+[info] 6 examples, 0 failure, 2 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error] ! 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestArtistController.application$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.application(TestArtistController.scala:15)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestArtistController.beforeAll(TestArtistController.scala:15)
+[info] TestArtistController
+[info] 
+[info] artist controller should
+[error]   ! create an artist and return tracks found in enumerator
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.trackMethods(Injectors.scala:39)
+[error] TestArtistController.trackMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.trackMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$35.apply(TestArtistController.scala:42)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$35.apply(TestArtistController.scala:20)
+[[37minfo[0m] application - Artist.save: this artist is already saved
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] 
+[info]   + not create an artist twice and return an error
+[info]   + find all artists since offset
+[info]   + find all artists containing worakls
+[error]   ! find one artist by id
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$48.apply(TestArtistController.scala:91)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$48.apply(TestArtistController.scala:90)
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] 
+[info]   + find one artist by facebookUrl
+[error]   ! follow and unfollow an artist by id
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$54.apply(TestArtistController.scala:102)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$54.apply(TestArtistController.scala:101)
+[info] 
+[error]   ! return an error if an user try to follow an artist twice
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$55.apply(TestArtistController.scala:115)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$55.apply(TestArtistController.scala:114)
+[info] 
+[error]   ! follow and unfollow an artist by facebookId
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$56.apply(TestArtistController.scala:131)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$56.apply(TestArtistController.scala:130)
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] 
+[error]   ! find followed artists
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$57.apply(TestArtistController.scala:144)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$57.apply(TestArtistController.scala:143)
+[info] 
+[error]   ! find one followed artist by id
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$60.apply(TestArtistController.scala:162)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$60.apply(TestArtistController.scala:161)
+[info] 
+[info]   + find artist by facebook containing
+[error]   x find events by artistFacebookUrl
+[error]    '[]' doesn't contain '"name":"name0"' (TestArtistController.scala:192)
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] 
+[error]   ! find passed events by artistId
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestArtistController.dbConfProvider$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.dbConfProvider(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.artistMethods(Injectors.scala:48)
+[error] TestArtistController.artistMethods$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.artistMethods(TestArtistController.scala:15)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$71.apply(TestArtistController.scala:207)
+[error] TestArtistController$$anonfun$1$$anonfun$apply$71.apply(TestArtistController.scala:196)
+[info] 
+[error]   x find artists by genre
+[error]    '[]' doesn't contain '{"artist":{"id":100,"name":"name","facebookUrl":"facebookUrl0"' (TestArtistController.scala:225)
+[info] 
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestArtistController.injector$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.injector(TestArtistController.scala:15)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestArtistController.databaseApi$lzycompute(TestArtistController.scala:15)
+[error] TestArtistController.databaseApi(TestArtistController.scala:15)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestArtistController.afterAll(TestArtistController.scala:15)
+[info] 
+[info] Total for specification TestArtistController
+[info] Finished in 609 ms
+[info] 17 examples, 2 failures, 10 errors
+[info] 
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] application - Address.formApply: empty address has not been created
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:93)
+[error] testsHelper.Context$class.application(Context.scala:47)
+[error] TestOrganizerController.application$lzycompute(TestOrganizerController.scala:14)
+[error] TestOrganizerController.application(TestOrganizerController.scala:14)
+[error] testsHelper.GlobalApplicationForControllers$class.beforeAll(GlobalApplicationForControllers.scala:22)
+[error] TestOrganizerController.beforeAll(TestOrganizerController.scala:14)
+[info] TestOrganizerController
+[info] 
+[info] organizer controller should
+[error]   x create an organizer
+[error]    'Organizer(Some(6),Some(111),test,None,None,None,None,None,false,None,POINT (-84 30),Some(17))'
+[error]    
+[error]     is not equal to 
+[error]    
+[error]    'Organizer(Some(6),Some(111),test,None,None,None,None,None,false,None,POINT (-84 30),None)' (TestOrganizerController.scala:25)
+[error] Actual:   ... 30),[S]o[m]e[(17])[)]
+[error] Expected: ... 30),[N]o[n]e[])[]
+[info] 
+[info]   + find a list of organizers
+[info]   + find one organizer by id
+[info]   + find a list of organizer containing
+[info]   + follow and unfollow an organizer by id
+[error]   x return an error if an user try to follow an organizer twice
+[error]    '201' is not equal to '409' (TestOrganizerController.scala:65)
+[info] 
+[info]   + follow an organizer by facebookId
+[info]   + find followed organizers
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info]   + return true if the organizer is followed else false
+[error]   ! get organizers near geoPoint
+[error]    Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestOrganizerController.injector$lzycompute(TestOrganizerController.scala:14)
+[error] TestOrganizerController.injector(TestOrganizerController.scala:14)
+[error] testsHelper.Injectors$class.dbConfProvider(Injectors.scala:35)
+[error] TestOrganizerController.dbConfProvider$lzycompute(TestOrganizerController.scala:14)
+[error] TestOrganizerController.dbConfProvider(TestOrganizerController.scala:14)
+[error] testsHelper.Injectors$class.geographicPointMethods(Injectors.scala:43)
+[error] TestOrganizerController.geographicPointMethods$lzycompute(TestOrganizerController.scala:14)
+[error] TestOrganizerController.geographicPointMethods(TestOrganizerController.scala:14)
+[error] TestOrganizerController$$anonfun$1$$anonfun$apply$40.apply(TestOrganizerController.scala:110)
+[error] TestOrganizerController$$anonfun$1$$anonfun$apply$40.apply(TestOrganizerController.scala:95)
+[info] 
+[error] ! 
+[error]  Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.] (EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[error] play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[error] play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[error] play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[error] play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[error] play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+[error] play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+[error] play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+[error] com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+[error] com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+[error] com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+[error] com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+[error] com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+[error] com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+[error] com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+[error] com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+[error] com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+[error] com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+[error] com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+[error] com.google.inject.Guice.createInjector(Guice.java:96)
+[error] com.google.inject.Guice.createInjector(Guice.java:73)
+[error] com.google.inject.Guice.createInjector(Guice.java:62)
+[error] play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:126)
+[error] testsHelper.Injectors$class.injector(Injectors.scala:34)
+[error] TestOrganizerController.injector$lzycompute(TestOrganizerController.scala:14)
+[error] TestOrganizerController.injector(TestOrganizerController.scala:14)
+[error] testsHelper.Injectors$class.databaseApi(Injectors.scala:36)
+[error] TestOrganizerController.databaseApi$lzycompute(TestOrganizerController.scala:14)
+[error] TestOrganizerController.databaseApi(TestOrganizerController.scala:14)
+[error] testsHelper.GlobalApplicationForControllers$class.afterAll(GlobalApplicationForControllers.scala:27)
+[error] TestOrganizerController.afterAll(TestOrganizerController.scala:14)
+[info] 
+[info] Total for specification TestOrganizerController
+[info] Finished in 52 ms
+[info] 12 examples, 2 failures, 3 errors
+[info] 
+[info] TestSearchArtist:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestSearchArtist *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestSearchSoundCloudTracks:
+[info] Exception encountered when attempting to run a suite with class name: TestSearchSoundCloudTracks *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestPlaylistModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestPlaylistModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestNormalizeArtistName:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestNormalizeArtistName *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestUtilities:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestUtilities *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestGetUserLikedPagesOnFacebook:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestGetUserLikedPagesOnFacebook *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestOrganizerModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestOrganizerModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestArtistModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestArtistModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestEventRelations:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestEventRelations *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestGenreModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestGenreModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestPlaceModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestPlaceModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestFollowService:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestFollowService *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestTrackModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestTrackModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestIssueModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestIssueModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestGenresStringToSet:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestGenresStringToSet *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestAddressModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestAddressModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestEventModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestEventModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestUserModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestUserModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestGeographicPointMethods:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestGeographicPointMethods *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestSearchYoutubeTracks:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestSearchYoutubeTracks *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestTariffModel:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestTariffModel *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestMyDBTableDefinition:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestMyDBTableDefinition *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestFormatDescription:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestFormatDescription *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] TestActors:
+[[31merror[0m] p.a.d.e.DefaultEvolutionsApi - ERROR: update or delete on table "addresses" violates foreign key constraint "places_addressid_fkey" on table "places"
+  Detail: Key (addressid)=(15) is still referenced from table "places". [ERROR:0, SQLSTATE:23503]
+[info] Exception encountered when attempting to run a suite with class name: TestActors *** ABORTED ***
+[info]   play.api.db.evolutions.InconsistentDatabase: Database 'tests' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+[info]   at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:269)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:121)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:97)
+[info]   at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:112)
+[info]   at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:77)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:50)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+[info]   at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+[info]   ...
+[info] ScalaTest
+[info] Run completed in 16 seconds, 42 milliseconds.
+[info] Total number of tests run: 0
+[info] Suites: completed 0, aborted 24
+[info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
+[info] *** 24 SUITES ABORTED ***
+[error] Error: Total 98, Failed 12, Errors 36, Passed 50
+[error] Failed tests:
+[error] 	TestIssueController
+[error] 	TestUserController
+[error] 	TestEventController
+[error] Error during tests:
+[error] 	TestGeographicPointMethods
+[error] 	TestEventRelations
+[error] 	TestIssueModel
+[error] 	TestTrackModel
+[error] 	TestFollowService
+[error] 	TestSearchSoundCloudTracks
+[error] 	TestGetUserLikedPagesOnFacebook
+[error] 	TestPlaylistController
+[error] 	TestUserModel
+[error] 	TestMyDBTableDefinition
+[error] 	TestNormalizeArtistName
+[error] 	TestEventModel
+[error] 	TestActors
+[error] 	TestSearchYoutubeTracks
+[error] 	TestGenreModel
+[error] 	TestGenresStringToSet
+[error] 	TestSearchArtist
+[error] 	TestOrganizerModel
+[error] 	TestArtistModel
+[error] 	TestTrackController
+[error] 	TestPlaceController
+[error] 	TestAddressModel
+[error] 	TestPlaylistModel
+[error] 	TestPlaceModel
+[error] 	TestArtistController
+[error] 	TestOrganizerController
+[error] 	TestUtilities
+[error] 	TestTariffModel
+[error] 	TestFormatDescription
+[error] (test:test) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 17 s, completed Dec 15, 2015 4:58:14 PM
+Build step 'Build using sbt' changed build result to FAILURE
+Build step 'Build using sbt' marked build as failure
+[INFO] HipChat notification sent to the following rooms: 1512094
+Finished: FAILURE

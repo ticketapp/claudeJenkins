@@ -2,6 +2,12 @@
 <project>
   <actions/>
   <description></description>
+  <logRotator class="hudson.tasks.LogRotator">
+    <daysToKeep>7</daysToKeep>
+    <numToKeep>30</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@2.4.0">
@@ -35,6 +41,13 @@
       <actions>test dist</actions>
       <subdirPath></subdirPath>
     </org.jvnet.hudson.plugins.SbtPluginBuilder>
+    <hudson.tasks.Shell>
+      <command>sshpass -p 9g2Myjdt scp -o StrictHostKeyChecking=no target/universal/claude-0.001.zip root@51.254.122.113:/root/claude.zip
+
+sshpass -p &quot;9g2Myjdt&quot; ssh -o StrictHostKeyChecking=no -t -t root@51.254.122.113 &apos;unzip -o claude.zip;&apos;
+
+sshpass -p &quot;9g2Myjdt&quot; ssh -o StrictHostKeyChecking=no -t -t root@51.254.122.113 &apos;service supervisor restart; sleep 2&apos;</command>
+    </hudson.tasks.Shell>
   </builders>
   <publishers>
     <jenkins.plugins.hipchat.HipChatNotifier plugin="hipchat@0.2.0">
@@ -50,84 +63,6 @@
       <startJobMessage></startJobMessage>
       <completeJobMessage></completeJobMessage>
     </jenkins.plugins.hipchat.HipChatNotifier>
-    <hudson.plugins.ws__cleanup.WsCleanup plugin="ws-cleanup@0.28">
-      <patterns>
-        <hudson.plugins.ws__cleanup.Pattern>
-          <pattern>target/universal/</pattern>
-          <type>INCLUDE</type>
-        </hudson.plugins.ws__cleanup.Pattern>
-      </patterns>
-      <deleteDirs>false</deleteDirs>
-      <skipWhenFailed>false</skipWhenFailed>
-      <cleanWhenSuccess>true</cleanWhenSuccess>
-      <cleanWhenUnstable>true</cleanWhenUnstable>
-      <cleanWhenFailure>true</cleanWhenFailure>
-      <cleanWhenNotBuilt>true</cleanWhenNotBuilt>
-      <cleanWhenAborted>true</cleanWhenAborted>
-      <notFailBuild>false</notFailBuild>
-      <cleanupMatrixParent>false</cleanupMatrixParent>
-      <externalDelete></externalDelete>
-    </hudson.plugins.ws__cleanup.WsCleanup>
   </publishers>
-  <buildWrappers>
-    <jenkins.plugins.publish__over__ssh.BapSshPostBuildWrapper plugin="publish-over-ssh@1.13">
-      <postBuild>
-        <consolePrefix>SSH: </consolePrefix>
-        <delegate>
-          <publishers>
-            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
-              <configName>claudeRemote</configName>
-              <verbose>false</verbose>
-              <transfers>
-                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
-                  <remoteDirectory></remoteDirectory>
-                  <sourceFiles></sourceFiles>
-                  <excludes></excludes>
-                  <removePrefix></removePrefix>
-                  <remoteDirectorySDF>false</remoteDirectorySDF>
-                  <flatten>false</flatten>
-                  <cleanRemote>false</cleanRemote>
-                  <noDefaultExcludes>false</noDefaultExcludes>
-                  <makeEmptyDirs>false</makeEmptyDirs>
-                  <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>mkdir claudeeee
-rm claude* -R</execCommand>
-                  <execTimeout>120000</execTimeout>
-                  <usePty>false</usePty>
-                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
-                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
-                  <remoteDirectory>/root</remoteDirectory>
-                  <sourceFiles>target/universal/claude*.zip</sourceFiles>
-                  <excludes></excludes>
-                  <removePrefix>target/universal</removePrefix>
-                  <remoteDirectorySDF>false</remoteDirectorySDF>
-                  <flatten>false</flatten>
-                  <cleanRemote>false</cleanRemote>
-                  <noDefaultExcludes>false</noDefaultExcludes>
-                  <makeEmptyDirs>false</makeEmptyDirs>
-                  <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>unzip -o claude*.zip
-service supervisor restart</execCommand>
-                  <execTimeout>360000</execTimeout>
-                  <usePty>false</usePty>
-                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
-              </transfers>
-              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
-              <usePromotionTimestamp>false</usePromotionTimestamp>
-              <credentials class="jenkins.plugins.publish_over_ssh.BapSshCredentials">
-                <secretPassphrase>P4wMltVu9VOjbdJklhvveq+QNLQS3muCdH9Y//fkN6o=</secretPassphrase>
-                <key></key>
-                <keyPath></keyPath>
-                <username>root</username>
-              </credentials>
-            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
-          </publishers>
-          <continueOnError>false</continueOnError>
-          <failOnError>false</failOnError>
-          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
-          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshAlwaysRunPublisherPlugin" reference="../.."/>
-        </delegate>
-      </postBuild>
-    </jenkins.plugins.publish__over__ssh.BapSshPostBuildWrapper>
-  </buildWrappers>
+  <buildWrappers/>
 </project>

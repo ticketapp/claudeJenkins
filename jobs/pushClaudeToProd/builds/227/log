@@ -1,0 +1,678 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/jobs/pushClaudeToProd/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ticketapp/master.git # timeout=10
+Fetching upstream changes from https://github.com/ticketapp/master.git
+ > git --version # timeout=10
+using .gitcredentials to set credentials
+ > git config --local credential.username ticketapp # timeout=10
+ > git config --local credential.helper store --file=/tmp/git2807118161852167941.credentials # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/ticketapp/master.git +refs/heads/*:refs/remotes/origin/*
+ > git config --local --remove-section credential # timeout=10
+ > git rev-parse origin/master^{commit} # timeout=10
+Checking out Revision a49d7462a12f5de792b236de3ea89d6939f105b7 (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a49d7462a12f5de792b236de3ea89d6939f105b7
+ > git rev-list a49d7462a12f5de792b236de3ea89d6939f105b7 # timeout=10
+[INFO] HipChat notification sent to the following rooms: 1512094
+[workspace] $ java -Dsbt.log.noformat=true -jar /var/jenkins_home/tools/org.jvnet.hudson.plugins.SbtPluginBuilder_SbtInstallation/sbt/bin/sbt-launch.jar test dist
+[info] Loading project definition from /var/jenkins_home/jobs/pushClaudeToProd/workspace/project
+[info] Set current project to Claude (in build file:/var/jenkins_home/jobs/pushClaudeToProd/workspace/)
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestEventController
+[info] 
+[info] Event controller should
+[info]   + create an event
+[info]   + find a list of events
+[info]   + find a list of event by containing
+[info]   + find one event by id
+[[31merror[0m] application - EventController.followEventByEventId: 17 is already followed
+[info]   + follow and unfollow an event by id
+[info]   + return an error if an user try to follow an event twice
+[info]   + find followed events
+[error]   x return true if an event is followed else false
+[error]    'false' is not equal to 'true' (TestEventController.scala:126)
+[info] 
+[info]   + create an event by facebookId
+[info]   + find events in interval
+[info]   + find passed events in interval
+[info]   + find events by placeId
+[info]   + find passed events by placeId
+[error]   ! find events by organizerId
+[error]    ERROR: duplicate key value violates unique constraint "organizers_pkey"
+[error]      Detail: Key (organizerid)=(1) already exists. (QueryExecutorImpl.java:2182)
+[error] org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2182)
+[error] org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1911)
+[error] org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:173)
+[error] org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:645)
+[error] org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:495)
+[error] org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:441)
+[error] slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsert$1.apply(JdbcInsertInvokerComponent.scala:190)
+[error] slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsert$1.apply(JdbcInsertInvokerComponent.scala:187)
+[error] slick.jdbc.JdbcBackend$SessionDef$class.withPreparedInsertStatement(JdbcBackend.scala:311)
+[error] slick.jdbc.JdbcBackend$BaseSession.withPreparedInsertStatement(JdbcBackend.scala:388)
+[error] slick.driver.JdbcInsertInvokerComponent$ReturningInsertInvoker.preparedInsert(JdbcInsertInvokerComponent.scala:321)
+[error] slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker.internalInsert(JdbcInsertInvokerComponent.scala:187)
+[error] slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker.insert(JdbcInsertInvokerComponent.scala:182)
+[error] slick.driver.JdbcInsertInvokerComponent$InsertInvokerDef$class.$plus$eq(JdbcInsertInvokerComponent.scala:72)
+[error] slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker.$plus$eq(JdbcInsertInvokerComponent.scala:152)
+[error] slick.driver.JdbcActionComponent$InsertActionComposerImpl$$anonfun$$plus$eq$1.apply(JdbcActionComponent.scala:457)
+[error] slick.driver.JdbcActionComponent$InsertActionComposerImpl$$anonfun$$plus$eq$1.apply(JdbcActionComponent.scala:457)
+[error] slick.driver.JdbcActionComponent$InsertActionComposerImpl$$anon$8.run(JdbcActionComponent.scala:449)
+[error] slick.driver.JdbcActionComponent$InsertActionComposerImpl$$anon$8.run(JdbcActionComponent.scala:447)
+[error] slick.backend.DatabaseComponent$DatabaseDef$$anon$2.liftedTree1$1(DatabaseComponent.scala:231)
+[error] slick.backend.DatabaseComponent$DatabaseDef$$anon$2.run(DatabaseComponent.scala:231)
+[info] 
+[info]   + find passed events by organizerId
+[info]   + get events near geoPoint
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] 
+[info] Total for specification TestEventController
+[info] Finished in 1 second, 944 ms
+[info] 18 examples, 1 failure, 1 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[[31merror[0m] application - Track.saveSequence:
+BatchUpdateException:org.postgresql.util.PSQLException: ERROR: insert or update on table "tracks" violates foreign key constraint "tracks_artistfacebookurl_fkey"
+  Detail: Key (artistfacebookurl)=(facebookUrlSearchTracksController) is not present in table "artists".
+[info] TestSearchTracksController
+[info] 
+[info] SearchTracksController should
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find tracks on Youtube by a title and an artist
+[info]   + get youtube track info
+[info] 
+[info] Total for specification TestSearchTracksController
+[info] Finished in 1 second, 913 ms
+[info] 4 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestPlaceController
+[info] 
+[info] Place controller should
+[[31merror[0m] application - PlaceController.followPlaceByPlaceId: there is no place with the id 1
+[info]   + create a place with an address
+[info]   + find a list of places
+[[31merror[0m] application - PlaceController.unfollowPlace: placeMethods.unfollow did not return 1
+[info]   + find a list of places containing
+[info]   + find one place by id
+[error]   x follow and unfollow a place by id
+[error]    '404' is not equal to '201' (TestPlaceController.scala:64)
+[[31merror[0m] application - PlaceController.followPlaceByPlaceId: 400 is already followed
+[info] 
+[info]   + return an error if a user try to follow a place twice
+[info]   + follow by facebookId
+[info]   + find followed places
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + return true if isFollowed else false
+[info]   + get places near geoPoint
+[info]   + return places 12 by 12 (and never the same with the same geographicPoint)
+[info] 
+[info] Total for specification TestPlaceController
+[info] Finished in 1 second, 375 ms
+[info] 13 examples, 1 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestUserController
+[info] 
+[info] user controller should
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find the geographicPoint for the user
+[info]   + get removed tracks for an user
+[info] 
+[info] Total for specification TestUserController
+[info] Finished in 824 ms
+[info] 4 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[[31merror[0m] application - PlaylistController.create: 
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "playlists_pkey"
+  Detail: Key (playlistid)=(1) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2182) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1911) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:173) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:645) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:495) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:441) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsert$1.apply(JdbcInsertInvokerComponent.scala:190) ~[slick_2.11-3.0.1.jar:na]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsert$1.apply(JdbcInsertInvokerComponent.scala:187) ~[slick_2.11-3.0.1.jar:na]
+	at slick.jdbc.JdbcBackend$SessionDef$class.withPreparedInsertStatement(JdbcBackend.scala:311) ~[slick_2.11-3.0.1.jar:na]
+	at slick.jdbc.JdbcBackend$BaseSession.withPreparedInsertStatement(JdbcBackend.scala:388) ~[slick_2.11-3.0.1.jar:na]
+[info] TestPlaylistController
+[info] 
+[info] playlist controller should
+[error]   x create and delete a playlist
+[error]    '500' is not equal to '200' (TestPlaylistController.scala:52)
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] 
+[info]   + find playlists by user
+[info]   + update a playlist
+[info] 
+[info] Total for specification TestPlaylistController
+[info] Finished in 869 ms
+[info] 5 examples, 1 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestIssueController
+[info] 
+[info] Issue controller should
+[info]   + find all issues
+[info]   + find all comments
+[info]   + create an issue
+[info]   + create a comment
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] 
+[info] Total for specification TestIssueController
+[info] Finished in 855 ms
+[info] 6 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestTrackController
+[info] 
+[info] track controller should
+[[31merror[0m] application - TrackController.followTrackByTrackId: 02894e56-08d1-4c1f-b3e4-466c069d15ed is already followed
+[info]   + create a track
+[info]   + find a list of tracks by artist
+[info]   + follow and unfollow a track by id
+[info]   + return an error if an user try to follow a track already followed
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find followed tracks
+[info]   + return true if the track is followed
+[info]   + find tracks by facebookUrl
+[info] 
+[info] Total for specification TestTrackController
+[info] Finished in 1 second, 10 ms
+[info] 9 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[[37minfo[0m] application - connectedUser(077f3ea6-2272-4457-a47e-9e9111108e44,LoginInfo(facebook,user@facebook.com),None,None,None,None,None)
+[info] TestApplicationController
+[info] 
+[info] Application controller should
+[[37minfo[0m] application - not connected
+[[36mdebug[0m] a.Application - [Silhouette] Unauthenticated user trying to access '/signOut'
+[info]   + return true if a user get the index page being connected
+[info]   + return false if a user get the index page being not connected
+[info]   + sign out a user being connected
+[info]   + return a status unauthorized when a user not connected tries to sign out
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[[37minfo[0m] application - Scheduler.updateGeographicPointOfPlaces started
+[[37minfo[0m] application - Scheduler.findTracksForArtists started
+[[37minfo[0m] application - Scheduler.findEventsForOrganizers started
+[[37minfo[0m] application - Scheduler.findEventsForPlaces started
+[[37minfo[0m] application - Scheduler.updateGeographicPointOfEvents started
+[[37minfo[0m] application - Scheduler.updateGeographicPointOfOrganizers started
+[info] 
+[info] Total for specification TestApplicationController
+[info] Finished in 940 ms
+[info] 6 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] TestArtistController
+[info] 
+[info] artist controller should
+[[37minfo[0m] application - Artist.save: this artist is already saved
+[info]   + create an artist and return tracks found in enumerator
+[info]   + not create an artist twice and return an error
+[info]   + find all artists since offset
+[info]   + find all artists containing worakls
+[[37minfo[0m] application - 077f3ea6-2272-4457-a47e-9e9111108e44
+[[37minfo[0m] application - 077f3ea6-2272-4457-a47e-9e9111108e44
+[[37minfo[0m] application - 077f3ea6-2272-4457-a47e-9e9111108e44
+[[31merror[0m] application - ArtistController.followArtistByArtistId: user with id 077f3ea6-2272-4457-a47e-9e9111108e44 already follows artist with id 7
+[info]   + find one artist by id
+[info]   + find one artist by facebookUrl
+[info]   + follow and unfollow an artist by id
+[info]   + return an error if an user try to follow an artist twice
+[info]   + follow and unfollow an artist by facebookId
+[info]   + find followed artists
+[info]   + find one followed artist by id
+[info]   + find artist by facebook containing
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + find events by artistFacebookUrl
+[info]   + find passed events by artistId
+[info]   + find artists by genre
+[info] 
+[info] Total for specification TestArtistController
+[info] Finished in 916 ms
+[info] 17 examples, 0 failure, 0 error
+[info] 
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[[31merror[0m] application - Address.formApply: empty address has not been created
+[[31merror[0m] application - OrganizerController.createOrganizer: INTERNAL_SERVER_ERROR: 
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "organizers_pkey"
+  Detail: Key (organizerid)=(1) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2182) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1911) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:173) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:645) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:495) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeUpdate(AbstractJdbc2Statement.java:441) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsert$1.apply(JdbcInsertInvokerComponent.scala:190) ~[slick_2.11-3.0.1.jar:na]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsert$1.apply(JdbcInsertInvokerComponent.scala:187) ~[slick_2.11-3.0.1.jar:na]
+	at slick.jdbc.JdbcBackend$SessionDef$class.withPreparedInsertStatement(JdbcBackend.scala:311) ~[slick_2.11-3.0.1.jar:na]
+	at slick.jdbc.JdbcBackend$BaseSession.withPreparedInsertStatement(JdbcBackend.scala:388) ~[slick_2.11-3.0.1.jar:na]
+[info] TestOrganizerController
+[info] 
+[info] organizer controller should
+[error]   ! create an organizer
+[error]    Unrecognized token 'OrganizerController': was expecting ('true', 'false' or 'null')
+[error]     at [Source: OrganizerController.createOrganizer: ERROR: duplicate key value violates unique constraint "organizers_pkey"
+[error]      Detail: Key (organizerid)=(1) already exists.; line: 1, column: 20] (JsonParser.java:1487)
+[error] com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1487)
+[error] com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:518)
+[error] com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2299)
+[error] com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:1458)
+[error] com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:683)
+[error] com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:3604)
+[error] com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:3522)
+[error] com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:1872)
+[error] play.api.libs.json.jackson.JacksonJson$.parseJsValue(JacksonJson.scala:226)
+[error] play.api.libs.json.Json$.parse(Json.scala:21)
+[error] play.api.test.ResultExtractors$class.contentAsJson(Helpers.scala:318)
+[error] TestOrganizerController.contentAsJson(TestOrganizerController.scala:14)
+[error] TestOrganizerController$$anonfun$1$$anonfun$apply$17.apply(TestOrganizerController.scala:24)
+[error] TestOrganizerController$$anonfun$1$$anonfun$apply$17.apply(TestOrganizerController.scala:19)
+[info] 
+[info]   + find a list of organizers
+[info]   + find one organizer by id
+[info]   + find a list of organizer containing
+[[31merror[0m] application - OrganizerController.followOrganizerByOrganizerId: 1 is already followed
+[info]   + follow and unfollow an organizer by id
+[info]   + return an error if an user try to follow an organizer twice
+[info]   + follow an organizer by facebookId
+[info]   + find followed organizers
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info]   + return true if the organizer is followed else false
+[info]   + get organizers near geoPoint
+[info] 
+[info] Total for specification TestOrganizerController
+[info] Finished in 830 ms
+[info] 12 examples, 0 failure, 1 error
+[info] 
+[info] TestSearchArtist:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchArtist
+[info] - must find a sequence of artists on Facebook
+[info] - must find Rone (an artist) on Facebook
+[info] - must normalize Facebook urls
+[info] - must remove useless words in a SoundCloudUrl (even if it contains uppercase letters)
+[info] - must remove nothing in a non-soundCloud website
+[info] - must aggregate the image path url with its offsets
+[info] - must find facebook artists from a set of website
+[info] - must find artists in event's title
+[info] - must find artists for an event
+[info] - must find facebook artists for a string
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestSearchSoundCloudTracks:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchSoundCloudTracks
+[info] - must find tracks on SoundCloud
+[info] - must get SoundCLoud tracks without SoundCloud website for Worakls
+[info] - must return SoundCLoud accounts with the best confidence
+[info] - must not return SoundCloud accounts id the best confidence is 0
+[info] - must find soundCloud ids for artist name worakls
+[info] - must find soundCloud websites for a list of soundCloud ids
+[info] - must compute the confidence of an souncloud with websites
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestPlaylistModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A playlist
+[info] - must be able to be saved and deleted *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: duplicate key value violates unique constraint "playlists_pkey"
+[info]     Detail: Key (playlistid)=(1) already exists.. (TestPlaylistModel.scala:61)
+[info] - must find playlists by userUUID
+[info] - must be updated
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestNormalizeArtistName:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A sequence of artists names (strings)
+[info] - must return artists name lowercase
+[info] - must return artists name trimmed without multiple spaces and tabs
+[info] - must return artists name without fanpage, official, officiel, fb, facebook, page
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestUtilities:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A utilities
+[info] - must normalize string with the method normalizeString
+[info] - normalize urls
+[info] - normalize maybe url
+[info] - refactor events or places names
+[info] - return an optional string from a set
+[info] - convert a string to a datetime
+[info] - return a list of normalized websites from a text
+[info] - return the number of hours separating us from 4 A.M.
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGetUserLikedPagesOnFacebook:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] GetUserLikedPagesOnFacebook service
+[info] - must transform a facebook page to a sequence of PageIdAndCategory
+[[31merror[0m] application - Artist.addSoundCloudUrlIfMissing: 
+org.postgresql.util.PSQLException: FATAL: sorry, too many clients already
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:427) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:203) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:65) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:149) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:35) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:47) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc42.AbstractJdbc42Connection.<init>(AbstractJdbc42Connection.java:21) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc42.Jdbc42Connection.<init>(Jdbc42Connection.java:28) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.Driver.makeConnection(Driver.java:415) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+[[37minfo[0m] application - GetUserLikedPagesOnFacebook.makeArtistUserRelations: done
+[info] - must save artists from facebook and make the relation with an user
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestOrganizerModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Organizer
+[info] - must be saved and deleted in database *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: duplicate key value violates unique constraint "organizers_pkey"
+[info]     Detail: Key (organizerid)=(1) already exists.. (TestOrganizerModel.scala:24)
+[info] - must find organizers
+[info] - must find organizer by facebookId
+[info] - must find organizers near geoPoint
+[info] - must be found near city
+[info] - must not be saved twice and return the organizerId
+[info] - must be linked to a place if one with the same facebookId already exists
+[info] - must save organizer with event relation
+[info] - must get the info about the organizer on Facebook
+[info] - must save and find an organizer with his address
+[info] - must find organizers containing
+[[31merror[0m] application - Organizer.saveEventRelations: 
+java.sql.BatchUpdateException: Batch entry 1 insert into "eventsorganizers" ("eventid","organizerid")  values (3,3) was aborted.  Call getNextException to see the cause.
+	at org.postgresql.jdbc2.AbstractJdbc2Statement$BatchResultHandler.handleError(AbstractJdbc2Statement.java:2781) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl$1.handleError(QueryExecutorImpl.java:395) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1912) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:338) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeBatch(AbstractJdbc2Statement.java:2959) ~[postgresql-9.4-1205-jdbc42.jar:9.4]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsertAll$1$$anonfun$apply$2.apply(JdbcInsertInvokerComponent.scala:207) ~[slick_2.11-3.0.1.jar:na]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker$$anonfun$internalInsertAll$1$$anonfun$apply$2.apply(JdbcInsertInvokerComponent.scala:201) ~[slick_2.11-3.0.1.jar:na]
+	at slick.jdbc.JdbcBackend$SessionDef$class.withPreparedStatement(JdbcBackend.scala:304) ~[slick_2.11-3.0.1.jar:na]
+	at slick.jdbc.JdbcBackend$BaseSession.withPreparedStatement(JdbcBackend.scala:388) ~[slick_2.11-3.0.1.jar:na]
+	at slick.driver.JdbcInsertInvokerComponent$BaseInsertInvoker.preparedInsert(JdbcInsertInvokerComponent.scala:177) ~[slick_2.11-3.0.1.jar:na]
+[info] - must save events relations *** FAILED ***
+[info]   false was not equal to true (TestOrganizerModel.scala:189)
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestArtistModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Artist
+[info] - must be saved in database and return the new artist
+[info] - must be deleted in database *** FAILED ***
+[info]   0 was not equal to 1 (TestArtistModel.scala:38)
+[[37minfo[0m] application - Artist.save: this artist is already saved
+[info] - must be found in database
+[[37minfo[0m] application - Artist.save: this artist is already saved
+[info] - must return None when trying to save an already existent artist
+[info] - must all be found
+[info] - must save its relation with an event *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: insert or update on table "eventsartists" violates foreign key constraint "eventsartists_eventid_fkey"
+[info]     Detail: Key (eventid)=(1) is not present in table "events".. (TestArtistModel.scala:108)
+[info] - must save its relation with an event, be found by this event and delete this relation *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: insert or update on table "eventsartists" violates foreign key constraint "eventsartists_eventid_fkey"
+[info]     Detail: Key (eventid)=(1) is not present in table "events".. (TestArtistModel.scala:119)
+[info] - must be updated
+[info] - must have his websites updated
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 1
+[info] - must have his websites updated without duplicates *** FAILED ***
+[info]   0 was not equal to 1 (TestArtistModel.scala:169)
+[info] - must have another website
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 26
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 26
+[[31merror[0m] application - Artist.addWebsitesFoundOnSoundCloud: not exactly one row was updated by addWebsite for artist Artist(Some(26),Some(facebookIdTestArtistModel),artistTest,Some(imagePath),Some(description),facebookUrl,Set(website),false,None,None)for website youtube.com/user/worakls/videos
+[[31merror[0m] application - Artist.addWebsitesFoundOnSoundCloud: not exactly one row was updated by addWebsite for artist Artist(Some(26),Some(facebookIdTestArtistModel),artistTest,Some(imagePath),Some(description),facebookUrl,Set(website),false,None,None)for website hungrymusic.fr
+[[37minfo[0m] application - Artist.addWebsite: there is no artist with the id 26
+[[31merror[0m] application - Artist.addWebsitesFoundOnSoundCloud: not exactly one row was updated by addWebsite for artist Artist(Some(26),Some(facebookIdTestArtistModel),artistTest,Some(imagePath),Some(description),facebookUrl,Set(website),false,None,None)for website twitter.com/worakls
+[info] - must save soundcloud websites for an artist
+[info] - must find an artist id by facebookId *** FAILED ***
+[info]   Some(31) was not equal to Some(2) (TestArtistModel.scala:216)
+[info] - must find an artist id by facebookUrl
+[info] - must find an artist by facebookUrl
+[info] - must read a facebook artist in Json
+[info] - must read a set of facebook artist in Json
+[info] - must return hasTracks set to true if he as some tracks and vice-versa *** FAILED ***
+[info]   java.util.NoSuchElementException: None.get
+[info]   at scala.None$.get(Option.scala:347)
+[info]   at scala.None$.get(Option.scala:345)
+[info]   at TestArtistModel$$anonfun$1$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$38.apply(TestArtistModel.scala:281)
+[info]   at TestArtistModel$$anonfun$1$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$38.apply(TestArtistModel.scala:279)
+[info]   at org.scalatest.concurrent.Futures$class.whenReady(Futures.scala:627)
+[info]   at org.scalatest.concurrent.ScalaFutures$.whenReady(ScalaFutures.scala:98)
+[info]   at TestArtistModel$$anonfun$1$$anonfun$apply$mcV$sp$21.apply$mcV$sp(TestArtistModel.scala:279)
+[info]   at TestArtistModel$$anonfun$1$$anonfun$apply$mcV$sp$21.apply(TestArtistModel.scala:262)
+[info]   at TestArtistModel$$anonfun$1$$anonfun$apply$mcV$sp$21.apply(TestArtistModel.scala:262)
+[info]   at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)
+[info]   ...
+[info] - must find all containing pattern
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestEventRelations:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] EventWithRelations
+[info] - must set the good geographicPoint depending of its relations
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGenreModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A genre
+[info] - must be saved and deleted
+[info] - must be saved in lowerCase
+[info] - must find a genre by containing
+[info] - must not be created if empty
+[info] - must return the already existing genre when there was a unique violation
+[info] - must save and delete its relation with a track
+[info] - must find all genres for a track
+[info] - must save its relation with an event *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: insert or update on table "eventsgenres" violates foreign key constraint "eventsgenres_eventid_fkey"
+[info]     Detail: Key (eventid)=(1) is not present in table "events".. (TestGenreModel.scala:121)
+[info] - must find a sequence of genres by names
+[info] - must save, update and delete its relation with an artist
+[info] - must find over genres in genre set
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestPlaceModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A place
+[info] - must be saved and deleted in database and return the new id
+[info] - must all be found, sorted by distance
+[info] - must return places 12 by 12 (and never the same with the same geographicPoint given)
+[info] - must be saved with its address and deleted in database
+[info] - must be linked to an organizer if one with the same facebookId already exists
+[info] - must save and delete its relation with an event *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: insert or update on table "eventsplaces" violates foreign key constraint "eventsplaces_eventid_fkey"
+[info]     Detail: Key (eventid)=(1) is not present in table "events".. (TestPlaceModel.scala:163)
+[info] - must get a new place by facebookId when saving new event by facebookId
+[info] - must find id by facebookId
+[info] - must find place on facebook
+[info] - must be found near city
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestFollowService:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Artist
+[info] - must be followed and unfollowed by a user
+[info] - must not be followed twice
+[info] - must be follow by facebookId
+[info] - must be returned if is followed *** FAILED ***
+[info]   Vector(Some(50), Some(200)) did not contain all of (Some(200), Some(2)) (TestFollowService.scala:63)
+[info] An Event
+[info] - must be followed and unfollowed by a user
+[info] - must not be followed twice
+[info] - must be returned if is followed
+[info] An organizer
+[info] - must be followed and unfollowed by a user
+[info] - must be followed by facebookId
+[info] - must not be followed twice
+[info] An place
+[info] - must be followed and unfollowed by a user
+[info] - must be followed by facebookId
+[info] - must not be followed twice
+[info] - must be returned if is followed
+[info] A track
+[info] - must be followed and unfollowed by a user
+[info] - must be returned if is followed
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestTrackModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A track
+[info] - must be found by playlist id
+[info] - must be saved and deleted
+[[37minfo[0m] application - Track already in database: Track(edc6912f-619e-4205-b4bd-e9445ba788d8,title2,url,s,thumbnailUrl,facebookUrl0,artistName,None,0.0)
+[info] - must not be saved twice for same title and artistName
+[info] - must be found by pattern
+[info] - must be found by genre
+[info] - must be rated up or down by a user
+[info] - must update rating up&down and confidence
+[info] - must get ratings up and down
+[info] - must calculate confidence with rating up and down
+[info] - must have his confidence updated
+[info] - must find all tracks sorted by confidence for an artist
+[info] - must find n (numberToReturn) tracks for an artist
+[info] - must remove duplicate with same title and artist name without taking account of accentuated letters
+[info] - must set artist.hasTrack on save track
+[info] - must set artist.hasTrack when saving a set of tracks
+[info] - must return true if artist name is in the title and vice-versa without taking account of accentuated letters
+[info] - must remove duplicates in enumerator
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestIssueModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An issue
+[info] - must all be found
+[info] - must found all its comments
+[info] - must save an issue
+[info] - must save a comment
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGenresStringToSet:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A sequence of genres as a string
+[info] - must return an empty set for an empty string
+[info] - must return a unique low case genre for a single word without punctuation
+[info] - must return genres split by comas in the string given
+[info] - must return genres split by spaces in the string given
+[info] - must return hip-hop
+[info] - must return the genres without music or synonyms
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestAddressModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An address
+[info] - must not be created if empty
+[info] - must be saved (in lowercase) in database and return the new id then be deleted
+[info] - must not be saved twice with same city, zip, street and return database addressId on unique violation
+[info] - must update address
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestEventModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An event
+[info] - must be saved and deleted in database
+[info] - must be saved with relations and deleted in database *** FAILED ***
+[info]   java.lang.UnsupportedOperationException: empty.head
+[info]   at scala.collection.immutable.Vector.head(Vector.scala:193)
+[info]   at TestEventModel$$anonfun$1$$anonfun$apply$mcV$sp$2$$anonfun$apply$mcV$sp$21$$anonfun$apply$10.apply(TestEventModel.scala:84)
+[info]   at TestEventModel$$anonfun$1$$anonfun$apply$mcV$sp$2$$anonfun$apply$mcV$sp$21$$anonfun$apply$10.apply(TestEventModel.scala:66)
+[info]   at org.scalatest.concurrent.Futures$class.whenReady(Futures.scala:627)
+[info]   at org.scalatest.concurrent.ScalaFutures$.whenReady(ScalaFutures.scala:98)
+[info]   at TestEventModel$$anonfun$1$$anonfun$apply$mcV$sp$2$$anonfun$apply$mcV$sp$21.apply(TestEventModel.scala:66)
+[info]   at TestEventModel$$anonfun$1$$anonfun$apply$mcV$sp$2$$anonfun$apply$mcV$sp$21.apply(TestEventModel.scala:65)
+[info]   at org.scalatest.concurrent.Futures$class.whenReady(Futures.scala:627)
+[info]   at org.scalatest.concurrent.ScalaFutures$.whenReady(ScalaFutures.scala:98)
+[info]   at TestEventModel$$anonfun$1$$anonfun$apply$mcV$sp$2.apply$mcV$sp(TestEventModel.scala:65)
+[info]   ...
+[info] - must find all events by genre
+[info] - must find all events by place
+[info] - must find all events by place sorted by date
+[info] - must return passed events for a place
+[info] - must return events linked to an artist
+[info] - must return passed events for an artist
+[info] - must return events linked to an organizer
+[info] - must return passed events for an organizer *** FAILED ***
+[info]   The future returned an exception of type: org.postgresql.util.PSQLException, with message: ERROR: duplicate key value violates unique constraint "events_pkey"
+[info]     Detail: Key (eventid)=(100) already exists.. (TestEventModel.scala:250)
+[info] - must return events facebook id for a place facebook id
+[info] - must find a complete event by facebookId *** FAILED ***
+[info]   List(Address(Some(26),POINT (45.7408394 4.8499501),Some(lyon),Some(69007),Some(rue paul vivier / rue de cronstadt))) was not equal to Vector(Address(Some(3),POINT (45.7408394 4.8499501),Some(lyon),Some(69007),Some(rue paul vivier / rue de cronstadt))) (TestEventModel.scala:284)
+[info] - must find nearest events
+[info] - must have the genre of its artists
+[info] - must find events in period near
+[info] - must find passed events in period near
+[info] - must find all containing pattern near a geoPoint
+[info] - must find all by city pattern
+[info] - must be found near city
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestUserModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A user
+[info] - must be saved and deleted
+[info] - must get his followed places
+[info] - must get his followed organizers
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestGeographicPointMethods:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] A geographicPoint
+[info] - must get a geographicPoint
+[info] - must get a geographicPoint for a city
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestSearchYoutubeTracks:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] SearchYoutubeTracks
+[info] - must return a list of echonestId/facebookId
+[info] - must return an artist name
+[info] - must return echonestId
+[info] - must return some tracks *** FAILED ***
+[info]   A timeout occurred waiting for a future to complete. Queried 665 times, sleeping 15 milliseconds between each query. (TestSearchYoutubeTracks.scala:45)
+[info] - must return a Set[String] Enumerator of Youtube tracks title
+[info] - must return a set of tracks for a title
+[info] - must return a set of tracks for a set of titles
+[info] - must return an enumerator of tracks
+[info] - must return a set of the Youtube channel Ids
+[info] - must return the names of the Youtube user
+[info] - must return some tracks for a Youtube User
+[info] - must return ids of user youtube
+[info] - must return a set of youtube tracks
+[info] - must return set of youtube tracks by websites with channel id
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestTariffModel:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] Tariff
+[info] - must find prices
+[info] - must find ticket seller
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestMyDBTableDefinition:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] MDBT
+[info] - must take an option of string separated with comma and return to set
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestFormatDescription:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] Format a description
+[info] - must should format links
+[info] - must should not format mail addresses as a link
+[info] - must should not format phone numbers as a link
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] TestActors:
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Starting application default Akka system: application
+[info] An Echo actor
+[info] - must send back messages unchanged
+[[37minfo[0m] p.a.l.c.ActorSystemProvider - Shutdown application default Akka system: application
+[info] ScalaTest
+[info] Run completed in 2 minutes, 17 seconds.
+[info] Total number of tests run: 178
+[info] Suites: completed 24, aborted 0
+[info] Tests: succeeded 162, failed 16, canceled 0, ignored 0, pending 0
+[info] *** 16 TESTS FAILED ***
+[error] Error: Total 252, Failed 19, Errors 2, Passed 231
+[error] Failed tests:
+[error] 	TestFollowService
+[error] 	TestPlaylistController
+[error] 	TestEventModel
+[error] 	TestSearchYoutubeTracks
+[error] 	TestGenreModel
+[error] 	TestOrganizerModel
+[error] 	TestArtistModel
+[error] 	TestPlaceController
+[error] 	TestPlaylistModel
+[error] 	TestPlaceModel
+[error] Error during tests:
+[error] 	TestEventController
+[error] 	TestOrganizerController
+[error] (test:test) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 139 s, completed Dec 15, 2015 5:22:25 PM
+Build step 'Build using sbt' changed build result to FAILURE
+Build step 'Build using sbt' marked build as failure
+[INFO] HipChat notification sent to the following rooms: 1512094
+Finished: FAILURE

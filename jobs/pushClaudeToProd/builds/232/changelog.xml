@@ -1,0 +1,11 @@
+commit 1eb44c355f6ad4171da849c36314e070549183d9
+tree a8802219e1f5ee15b48f80d2014788920b0eec4b
+parent 4a198048582885357cae9a8fb6ba43a7a9e160e1
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 20:41:09 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 20:41:09 +0100
+
+    Correct a spelling mistake
+
+
+
+:100755 100755 f9acc51ac47de0e3f028ecf0ad42e4913dd50edc 7cd97d4f89ceccbe1308a41e6ef39b209d544495 M	public/components/search/searchBar.html

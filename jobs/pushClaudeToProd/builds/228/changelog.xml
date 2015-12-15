@@ -1,0 +1,26 @@
+commit 4a198048582885357cae9a8fb6ba43a7a9e160e1
+tree 5cca5368ff8aa5e716ce257f5c0cadab4c95a38b
+parent 016a91e624f4b19ccea4c21e61687a1da1a88acb
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 19:16:48 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 19:16:48 +0100
+
+    Correct (WIP4) 2.sql inconsistent states bugs
+
+
+
+:100755 100755 354ce62e8215e3ed042ef076baf855fcef03c143 3693c8521a43b6e4c210fdd4adce484f1b2809cd M	conf/evolutions/tests/1.sql
+:100644 000000 c920520b074eeeb27fe2e0f45ebef1c993b61afc 0000000000000000000000000000000000000000 D	conf/evolutions/tests/2.sql
+:100644 100644 810e3c43c82246ab5045fcd4d4be7163b44dfab4 a459485616dd657034dd050b190dcd1bf2355ef4 M	test/testsHelper/GlobalApplicationForControllers.scala
+commit 016a91e624f4b19ccea4c21e61687a1da1a88acb
+tree 2f2527a2fa65dc8be2932fb167525374ef289693
+parent a49d7462a12f5de792b236de3ea89d6939f105b7
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 18:46:35 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 18:46:35 +0100
+
+    Correct (WIP3) 2.sql inconsistent states bugs
+
+
+
+:100644 100644 7207a254dd9fe58d164e6bcab45550b198b3b9bf c920520b074eeeb27fe2e0f45ebef1c993b61afc M	conf/evolutions/tests/2.sql
+:100755 100755 385b7c3f7cf2fd03c87c3e8079c2b792cc14021e 5aeb6b4920ff07061598f339c705a4521b0bae3c M	test/TestOrganizerModel.scala
+:100644 100644 e05998d65ee91d08bcdd4c5c90543029782a5537 7a6f58c8cf5cf64f84dbc52481184a83fb98e1d7 M	test/testsHelper/GlobalApplicationForModels.scala

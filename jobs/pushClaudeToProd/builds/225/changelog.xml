@@ -1,0 +1,12 @@
+commit a49d7462a12f5de792b236de3ea89d6939f105b7
+tree ccf6faf664d67058051713f3800f22e15402fb08
+parent f065237fcb4bdabbdae83c669c891d786144c4fe
+author Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 18:15:13 +0100
+committer Simon Garnier <simongarnier07@hotmail.fr> 2015-12-15 18:15:13 +0100
+
+    Correct (WIP) 2.sql inconsistent states bugs
+
+
+
+:100755 100755 9b1da1c2c7ef69bf7e932fb7ba1eb8188eea3c56 354ce62e8215e3ed042ef076baf855fcef03c143 M	conf/evolutions/default/1.sql
+:100755 100755 9b1da1c2c7ef69bf7e932fb7ba1eb8188eea3c56 354ce62e8215e3ed042ef076baf855fcef03c143 M	conf/evolutions/tests/1.sql
